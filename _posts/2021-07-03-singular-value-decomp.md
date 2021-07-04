@@ -19,20 +19,12 @@ In this notebook we explore an extremely useful result in linear algebra, the Si
 5. Appendix
 
 ## References
-1. Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control by Steven L. Brunton, J. Nathan Kutz (http://www.databookuw.com/) and accompanying playlist (https://www.youtube.com/playlist?list=PLMrJAkhIeNNRpsRhXTMt8uJdIGz9-X_1-)
-2. Fundamental Theorem of Linear Algebra by Gilbert Strang (https://www.uvm.edu/pdodds/teaching/courses/2009-01UVM-124/docs/strang1993a.pdf)
-3. Notes on the SVD (https://graphics.stanford.edu/courses/cs205a-13-fall/assets/notes/chapter6.pdf)
-4. A Tutorial on Principal Component Analysis by Jonathon Shlens (https://arxiv.org/pdf/1404.1100.pdf)
+1. <a href="http://www.databookuw.com/"> Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control by Steven L. Brunton, J. Nathan Kutz</a> and <a href="https://www.youtube.com/playlist?list=PLMrJAkhIeNNRpsRhXTMt8uJdIGz9-X_1-">accompanying playlist </a>
+2. <a href="https://www.uvm.edu/pdodds/teaching/courses/2009-01UVM-124/docs/strang1993a.pdf">Fundamental Theorem of Linear Algebra by Gilbert Strang </a>
+3. <a href="https://graphics.stanford.edu/courses/cs205a-13-fall/assets/notes/chapter6.pdf">Notes on the SVD </a>
+4. <a href="https://arxiv.org/pdf/1404.1100.pdf">A Tutorial on Principal Component Analysis by Jonathon Shlens </a>
 
-5. Options, Futures, and other Derivatives (8th Ed.) by John C. Hull (https://www.amazon.ca/Options-Futures-Other-Derivatives-10th/dp/013447208X)
-
-
-
-
-
-
-
-
+5. <a href="https://www.amazon.ca/Options-Futures-Other-Derivatives-10th/dp/013447208X">Options, Futures, and other Derivatives (8th Ed.) by John C. Hull </a>
 
 # 1. Theory
 
@@ -115,10 +107,10 @@ plt.subplots_adjust(top=1.1)
 ```
 
 
-    
+​    
 ![png](/img/posts/svd/output_3_0.png)
 
-    
+​    
 
 
 
@@ -193,10 +185,10 @@ plt.savefig('image_approx.png')
 ```
 
 
-    
+​    
 ![png](/img/posts/svd/output_6_0.png)
 
-    
+​    
 
 
 
@@ -227,9 +219,9 @@ fig.suptitle('Low Rank Approximations');
 ```
 
 
-    
+​    
 ![png](/img/posts/svd/output_7_0.png)
-    
+​    
 
 
 # 2. Principal Component Analysis
@@ -377,7 +369,7 @@ display(pc_df.set_index('Maturity'))
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -566,9 +558,9 @@ ax.set_title('Explained Variation among Principal Axes')
 
 
 
-    
+​    
 ![png](/img/posts/svd/output_12_1.png)
-    
+​    
 
 
 
@@ -590,9 +582,9 @@ ax.set_title('Factor Loadings for Treasury Data');
 ```
 
 
-    
+​    
 ![png](/img/posts/svd/output_13_0.png)
-    
+​    
 
 
 Below is a visual interpretation of the Treasury data after transforming it using PCA.  The plot represents each of the 39 samples projected into $\Bbb{R}^3$ along the 3 most important principal axes.  For highly correlated variables this could be a very useful technique for classification.  In our case each sample exists in the same class (CAD Treasury Note) but in other contexts samples may be organized using a distinguishing factor, like sector or exchange, and visually represented similar to what is shown below.  One could then look for clusters among the securities to see if the principal components reveal any underlying correlated structure behind the variables.  
@@ -619,9 +611,9 @@ plt.savefig('PCA_treasury.png')
 ```
 
 
-    
+​    
 ![png](/img/posts/svd/output_15_0.png)
-    
+​    
 
 
 # 4. Conclusion
@@ -651,7 +643,7 @@ display(pd.DataFrame(np.vstack([pca.singular_values_, np.cumsum(pca.explained_va
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
@@ -818,7 +810,7 @@ display(pd.DataFrame(np.vstack([pca.singular_values_, np.cumsum(pca.explained_va
     .dataframe tbody tr th {
         vertical-align: top;
     }
-
+    
     .dataframe thead th {
         text-align: right;
     }
