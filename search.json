@@ -1,0 +1,317 @@
+[
+  {
+    "objectID": "notes/probability/ch01-sample-space.html",
+    "href": "notes/probability/ch01-sample-space.html",
+    "title": "Chapter 1: The Sample Space",
+    "section": "",
+    "text": "Consider an experiment and its events, characterised by a sample space \\Omega and the points within it.\n\n\n\n\n\n\nNoteDefinitions — Events\n\n\n\nGiven two events A and B:\n\nAB denotes the event “A and B” (intersection)\nA \\cup B denotes the event “A or B” (union)\nIf AB = \\emptyset we say A and B are mutually exclusive\nIf every point in A is in B, we write A \\subset B (“A implies B”)\nA - B denotes the event “A occurs but not B”\n\\bar{A} denotes the complement of A\n\n\n\n\n\n\n\n\n\nNoteDefinition — Probability on a Discrete Space\n\n\n\nGiven a discrete sample space \\Omega = \\{E_1, E_2, \\ldots\\}, a probability is an assignment of non-negative numbers \\mathbb{P}(E_j) to each sample point such that \\mathbb{P}(E_1) + \\mathbb{P}(E_2) + \\cdots = 1. The probability of an event A is then \\mathbb{P}(A) = \\sum_{E_j \\in A} \\mathbb{P}(E_j).\n\n\n\n\n\n\n\n\nTipExample — Two Coin Flips\n\n\n\n\n\nFlip a fair coin twice. The sample space is \\Omega = \\{HH, HT, TH, TT\\}.\nLet A = heads on the first toss, B = tails on the second toss. Then:\n\n\n\nEvent\nElements\nProbability\n\n\n\n\nA\n\\{HH, HT\\}\n1/2\n\n\nB\n\\{HT, TT\\}\n1/2\n\n\nAB\n\\{HT\\}\n1/4\n\n\nA \\cup B\n\\{HH, HT, TT\\}\n3/4"
+  },
+  {
+    "objectID": "notes/probability/ch01-sample-space.html#events-and-sample-spaces",
+    "href": "notes/probability/ch01-sample-space.html#events-and-sample-spaces",
+    "title": "Chapter 1: The Sample Space",
+    "section": "",
+    "text": "Consider an experiment and its events, characterised by a sample space \\Omega and the points within it.\n\n\n\n\n\n\nNoteDefinitions — Events\n\n\n\nGiven two events A and B:\n\nAB denotes the event “A and B” (intersection)\nA \\cup B denotes the event “A or B” (union)\nIf AB = \\emptyset we say A and B are mutually exclusive\nIf every point in A is in B, we write A \\subset B (“A implies B”)\nA - B denotes the event “A occurs but not B”\n\\bar{A} denotes the complement of A\n\n\n\n\n\n\n\n\n\nNoteDefinition — Probability on a Discrete Space\n\n\n\nGiven a discrete sample space \\Omega = \\{E_1, E_2, \\ldots\\}, a probability is an assignment of non-negative numbers \\mathbb{P}(E_j) to each sample point such that \\mathbb{P}(E_1) + \\mathbb{P}(E_2) + \\cdots = 1. The probability of an event A is then \\mathbb{P}(A) = \\sum_{E_j \\in A} \\mathbb{P}(E_j).\n\n\n\n\n\n\n\n\nTipExample — Two Coin Flips\n\n\n\n\n\nFlip a fair coin twice. The sample space is \\Omega = \\{HH, HT, TH, TT\\}.\nLet A = heads on the first toss, B = tails on the second toss. Then:\n\n\n\nEvent\nElements\nProbability\n\n\n\n\nA\n\\{HH, HT\\}\n1/2\n\n\nB\n\\{HT, TT\\}\n1/2\n\n\nAB\n\\{HT\\}\n1/4\n\n\nA \\cup B\n\\{HH, HT, TT\\}\n3/4"
+  },
+  {
+    "objectID": "notes/probability/ch01-sample-space.html#combinatorial-analysis",
+    "href": "notes/probability/ch01-sample-space.html#combinatorial-analysis",
+    "title": "Chapter 1: The Sample Space",
+    "section": "2 Combinatorial Analysis",
+    "text": "2 Combinatorial Analysis\n\n2.1 Permutations\nConsider a population of n distinct items and a sample of size r. The number of ordered samples is:\n\nwith replacement: n^r\nwithout replacement: (n)_r = n(n-1)\\cdots(n-r+1)\n\nWhen r = n we get all orderings of the full set: (n)_n = n! = n(n-1)(n-2)\\cdots 2 \\cdot 1.\n\n\n\n\n\n\nTipExample — Probability of Five Distinct Digits\n\n\n\n\n\nWhat is the probability that five randomly drawn digits (0–9, with replacement) are all different?\n\\frac{(10)_5}{10^5} = \\frac{10 \\cdot 9 \\cdot 8 \\cdot 7 \\cdot 6}{100000} = \\frac{30240}{100000} = 0.3024.\n\n\n\n\n\n2.2 The Birthday Problem\nWhat is the probability that at least two people in a group of n share a birthday?\nThe probability that no two share a birthday is p_{\\text{no match}} = \\frac{(365)_n}{365^n} = \\left(1 - \\frac{1}{365}\\right)\\left(1 - \\frac{2}{365}\\right)\\cdots\\left(1 - \\frac{n-1}{365}\\right).\nFor small n, ignoring terms of order (1/365)^2 and higher: p_{\\text{no match}} \\approx 1 - \\frac{1 + 2 + \\cdots + (n-1)}{365} = 1 - \\frac{n(n-1)}{730}.\nSo \\mathbb{P}(\\text{at least one match}) \\approx \\frac{n(n-1)}{730} \\quad \\text{for small } n.\nFor larger n use the log approximation \\log(1-x) \\approx -x: \\log p_{\\text{no match}} \\approx -\\frac{1 + 2 + \\cdots + (n-1)}{365} = -\\frac{n(n-1)}{730} giving p_{\\text{no match}} \\approx e^{-n(n-1)/730}.\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nn_vals = np.arange(1, 70)\n\n# Exact computation\np_no_match = np.ones(len(n_vals))\nfor i, n in enumerate(n_vals):\n    p = 1.0\n    for k in range(n):\n        p *= (365 - k) / 365\n    p_no_match[i] = p\n\np_match = 1 - p_no_match\n\nfig, ax = plt.subplots(figsize=(7, 4))\nax.plot(n_vals, p_match, color='steelblue', linewidth=2)\nax.axhline(0.5, color='gray', linestyle='--', linewidth=0.8, label='50%')\nax.axvline(23, color='coral', linestyle='--', linewidth=0.8, label='n = 23')\nax.set_xlabel('Group size $n$')\nax.set_ylabel('$\\\\mathbb{P}$(at least one shared birthday)')\nax.set_title('Birthday Problem')\nax.legend()\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\nn50 = next(n for n, p in zip(n_vals, p_match) if p &gt;= 0.5)\nprint(f\"Group size needed for &gt;50% probability: {n50}\")\n\n\n\n\n\n\n\n\nFigure 1: Probability of at least one shared birthday vs. group size\n\n\n\n\n\nGroup size needed for &gt;50% probability: 23\n\n\n\n\n2.3 Combinations\n\n\n\n\n\n\nNoteTheorem — Binomial Coefficient\n\n\n\nThe number of ways to choose a group of r items from n (order irrelevant) is \\binom{n}{r} = \\frac{(n)_r}{r!} = \\frac{n!}{r!\\,(n-r)!}.\n\n\nWhy? Start with (n)_r ordered selections. Each unordered group of size r has been counted r! times (once for each ordering), so divide by r!.\n\n\n\n\n\n\nTipExample — Understanding \\binom{5}{3} = 10\n\n\n\n\n\nWe want groups of 3 from \\{1,2,3,4,5\\}.\n\nTotal ordered arrangements: 5! = 120\nEach group of 3 can be ordered 3! = 6 ways (overcounting factor)\nThe leftover 5-3=2 items can be arranged 2! = 2 ways (also overcounting)\n\n\\binom{5}{3} = \\frac{5!}{3!\\cdot 2!} = \\frac{120}{6 \\cdot 2} = 10."
+  },
+  {
+    "objectID": "notes/probability/ch01-sample-space.html#problem-set",
+    "href": "notes/probability/ch01-sample-space.html#problem-set",
+    "title": "Chapter 1: The Sample Space",
+    "section": "3 Problem Set",
+    "text": "3 Problem Set\n\n3.1 Core Problems (Feller)\nProblem 1.1. Among the digits 1, 2, 3, 4, 5 first one is chosen, and then a second selection is made among the remaining four. Assume all twenty outcomes are equally likely. Find the probability that an odd digit is selected (a) the first time; (b) the second time; (c) both times.\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\nWrite out the sample space:\n\\begin{array}{ccccc}\n(1,2) & (2,1) & (3,1) & (4,1) & (5,1) \\\\\n(1,3) & (2,3) & (3,2) & (4,2) & (5,2) \\\\\n(1,4) & (2,4) & (3,4) & (4,3) & (5,3) \\\\\n(1,5) & (2,5) & (3,5) & (4,5) & (5,4)\n\\end{array}\nThe odd digits are \\{1, 3, 5\\}.\n\nOutcomes with odd first digit: rows with first element in \\{1,3,5\\} — that’s 3 \\times 4 = 12 outcomes. \\mathbb{P} = 12/20 = 3/5.\nBy symmetry, \\mathbb{P}(\\text{second odd}) = 3/5 as well. (Each position is equally likely to take each value.)\nBoth odd: pairs (o_1, o_2) with o_1 \\neq o_2, both in \\{1,3,5\\}. Count: 3 \\times 2 = 6. \\mathbb{P} = 6/20 = 3/10.\n\n\n\n\nProblem 1.2. A coin is tossed until for the first time the same result appears twice in succession. Assign probability 1/2^n to each outcome requiring n tosses. (a) Describe the sample space. (b) Find \\mathbb{P}(\\text{ends before toss 6}). (c) Find \\mathbb{P}(\\text{even number of tosses}).\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\nThe sample space consists of strings of length n \\geq 2 where the first n-2 characters alternate (HT\\ldots or TH\\ldots) and the last two are identical:\n\\begin{array}{rll}\nn=2: & HH, & TT \\\\\nn=3: & THH, & HTT \\\\\nn=4: & HTHH, & THTT \\\\\n& \\vdots\n\\end{array}\nEach length n contributes 2 outcomes each with probability 1/2^n.\n(b) End before toss 6 means n \\in \\{2,3,4,5\\}: 2\\left(\\frac{1}{4}+\\frac{1}{8}+\\frac{1}{16}+\\frac{1}{32}\\right) = 2 \\cdot \\frac{8+4+2+1}{32} = \\frac{30}{32} = \\frac{15}{16}.\n(c) Even n means n = 2, 4, 6, \\ldots: \\sum_{k=1}^{\\infty} \\frac{2}{2^{2k}} = 2\\sum_{k=1}^{\\infty}\\frac{1}{4^k} = 2 \\cdot \\frac{1/4}{1-1/4} = \\frac{2}{3}.\n\n\n\nProblem 1.3. Two dice are thrown. Let A = sum is odd, B = at least one ace. Find \\mathbb{P}(AB), \\mathbb{P}(A \\cup B), \\mathbb{P}(A\\bar{B}).\n\n\n\n\n\n\nCautionSolution\n\n\n\n\n\nWith 36 equally likely outcomes: - \\mathbb{P}(A) = 18/36 = 1/2 (odd sum) - \\mathbb{P}(B) = 11/36 (at least one ace: 6+6-1=11 outcomes) - \\mathbb{P}(AB) = 6/36 = 1/6 (odd sum and at least one ace — enumerate: (1,2),(1,4),(1,6),(2,1),(4,1),(6,1))\nThen: \\mathbb{P}(A \\cup B) = \\frac{18}{36} + \\frac{11}{36} - \\frac{6}{36} = \\frac{23}{36} \\mathbb{P}(A\\bar{B}) = \\mathbb{P}(A) - \\mathbb{P}(AB) = \\frac{18}{36} - \\frac{6}{36} = \\frac{1}{3}.\n\n\n\n\n\n\n3.2 Quant Finance Problems\n\n\n\n\n\n\nProblem QF-1 — Gambler’s Ruin. A trader has $3 and plays fair $1 bets, stopping at $0 or $6.\n\nFind her probability of ruin using the formula p_k = 1 - k/N.\nIf bets are unfair with win probability p \\neq 1/2, the ruin probability is \\displaystyle\\frac{(q/p)^k - (q/p)^N}{1 - (q/p)^N} where q = 1-p. Compute this for p = 0.45, k = 3, N = 6.\nWhat does this tell you about edge (positive expected value) in trading?\n\n\n\n\n\n\n\n\n\n\nProblem QF-2 — CRR Binomial Model. Stock S_0 = 100 moves up by u=1.1 or down by d=0.9 each day for 3 days.\n\nDescribe \\Omega and its 8 paths.\nList paths with S_3 &gt; 105 (i.e., at least two up-moves).\nCompute \\mathbb{P}(S_3 &gt; 105) with real-world p = 0.6.\nFind the risk-neutral probability \\tilde{p} satisfying \\tilde{p}\\cdot u + (1-\\tilde{p})\\cdot d = 1 (zero interest rate). Recompute (c) under \\tilde{p}.\n\nThis is the Cox-Ross-Rubinstein model — the simplest framework for pricing options.\n\n\n\n\n\n\n\n\n\nProblem QF-3 — Bayes and Regime Detection. A market is in trending state T with prior \\mathbb{P}(T) = 0.4. A momentum signal fires on 70% of trending days and 20% of mean-reverting days.\n\nCompute the posterior \\mathbb{P}(T \\mid \\text{signal}).\nAfter two independent signals, what is \\mathbb{P}(T \\mid \\text{two signals})?\nAt what prior does a single signal leave you at 50% posterior?\n\n\n\n\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\np_T = 0.4          # prior P(T)\np_signal_T = 0.70  # P(signal | T)\np_signal_M = 0.20  # P(signal | M)\n\nk_vals = np.arange(0, 8)\nposteriors = []\n\nprior = p_T\nfor k in k_vals:\n    posteriors.append(prior)\n    # Bayes update\n    likelihood_T = p_signal_T\n    likelihood_M = p_signal_M\n    posterior = (prior * likelihood_T) / (prior * likelihood_T + (1 - prior) * likelihood_M)\n    prior = posterior\n\nfig, ax = plt.subplots(figsize=(7, 4))\nax.plot(k_vals, posteriors, 'o-', color='steelblue', linewidth=2, markersize=6)\nax.axhline(0.5, color='gray', linestyle='--', linewidth=0.8, label='50% threshold')\nax.set_xlabel('Number of consecutive positive signals')\nax.set_ylabel('$\\\\mathbb{P}(\\\\text{Trending} \\\\mid \\\\text{signals})$')\nax.set_title('Bayesian Regime Detection')\nax.set_ylim(0, 1)\nax.legend()\nax.grid(True, alpha=0.3)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nFigure 2: Bayesian posterior after observing k consecutive positive signals"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m Sebastian Lech. These pages collect my working notes on probability theory, mathematics, and quantitative finance.\nI’m currently reading Feller’s An Introduction to Probability Theory and Its Applications and extending the problems with a quant finance lens — connecting the classical theory to derivatives pricing, portfolio risk, and stochastic processes.\nPreviously I’ve written about linear algebra (SVD, eigendecomposition) and time series applied to financial data.\nContact: lech.sebastianp@gmail.com GitHub: SebastianLech"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/pyzmq-27.1.0.dist-info/licenses/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/pyzmq-27.1.0.dist-info/licenses/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nBSD 3-Clause License\nCopyright (c) 2009-2012, Brian Granger, Min Ragan-Kelley\nAll rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/narwhals-2.21.2.dist-info/licenses/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/narwhals-2.21.2.dist-info/licenses/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nMIT License\nCopyright (c) 2024 to present, Marco Gorelli\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nCopyright © 2020, Encode OSS Ltd. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\n\nSPLITMIX64\nWritten in 2015 by Sebastiano Vigna (vigna@acm.org)\nTo the extent possible under law, the author has dedicated all copyright and related and neighboring rights to this software to the public domain worldwide. This software is distributed without any warranty.\nSee http://creativecommons.org/publicdomain/zero/1.0/."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.html#the-mit-license",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.html#the-mit-license",
+    "title": "",
+    "section": "The MIT License",
+    "text": "The MIT License\nPCG Random Number Generation for C.\nCopyright 2014 Melissa O’Neill oneill@pcg-random.org\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\n\nMT19937\nCopyright (c) 2003-2005, Jean-Sebastien Roy (js@jeannot.org)\nThe rk_random and rk_seed functions algorithms and the original design of the Mersenne Twister RNG:\nCopyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura, All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nThe names of its contributors may not be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\nOriginal algorithm for the implementation of rk_interval function from Richard J. Wagner’s implementation of the Mersenne Twister RNG, optimised by Magnus Jonsson.\nConstants used in the rk_double implementation by Isaku Wada.\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nCopyright (C) 2010-2018 Max-Planck-Society All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/idna-3.16.dist-info/licenses/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/idna-3.16.dist-info/licenses/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nBSD 3-Clause License\nCopyright (c) 2013-2026, Kim Davies and contributors. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/soupsieve-2.8.4.dist-info/licenses/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/soupsieve-2.8.4.dist-info/licenses/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nMIT License\nCopyright (c) 2018 - 2026 Isaac Muse isaacmuse@gmail.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Python projects and notebooks. Add your .ipynb or .qmd files to this directory and they’ll appear here.\nComing soon."
+  },
+  {
+    "objectID": "SETUP.html",
+    "href": "SETUP.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "SETUP.html#install-quarto",
+    "href": "SETUP.html#install-quarto",
+    "title": "",
+    "section": "1. Install Quarto",
+    "text": "1. Install Quarto\nDownload from https://quarto.org/docs/get-started/ and install (it’s a single binary, ~100MB).\nVerify: quarto --version"
+  },
+  {
+    "objectID": "SETUP.html#replace-your-sebastianlech.github.io-repo",
+    "href": "SETUP.html#replace-your-sebastianlech.github.io-repo",
+    "title": "",
+    "section": "2. Replace your sebastianlech.github.io repo",
+    "text": "2. Replace your sebastianlech.github.io repo\nSince you’re starting fresh, the cleanest approach:\n# Clone your existing repo\ngit clone https://github.com/SebastianLech/sebastianlech.github.io\ncd sebastianlech.github.io\n\n# Delete all existing Jekyll files\ngit rm -rf .\n\n# Copy everything from _quarto-site/ into the repo root\ncp -r /path/to/probability/_quarto-site/. .\n\n# Preview locally first\nquarto preview\n\n# When it looks good, push\ngit add .\ngit commit -m \"migrate to Quarto\"\ngit push origin main"
+  },
+  {
+    "objectID": "SETUP.html#enable-github-pages",
+    "href": "SETUP.html#enable-github-pages",
+    "title": "",
+    "section": "3. Enable GitHub Pages",
+    "text": "3. Enable GitHub Pages\nIn your repo on GitHub: - Settings → Pages - Source: Deploy from a branch - Branch: gh-pages / /(root) - Save\nThe first push will trigger the GitHub Action which builds and deploys. Your site will be live at https://sebastianlech.github.io in ~2 minutes."
+  },
+  {
+    "objectID": "SETUP.html#add-the-probability-notes-as-a-submodule-optional-but-clean",
+    "href": "SETUP.html#add-the-probability-notes-as-a-submodule-optional-but-clean",
+    "title": "",
+    "section": "4. Add the probability notes as a submodule (optional but clean)",
+    "text": "4. Add the probability notes as a submodule (optional but clean)\nIf you want to keep the probability repo separate from the main site:\ncd sebastianlech.github.io\ngit submodule add https://github.com/SebastianLech/probability notes/probability-src\nThen symlink or copy .qmd files from the submodule into notes/probability/ as part of the build. Simpler: just keep .qmd files directly in the main site repo and use the probability repo for .tex source only."
+  },
+  {
+    "objectID": "SETUP.html#adding-new-content",
+    "href": "SETUP.html#adding-new-content",
+    "title": "",
+    "section": "5. Adding new content",
+    "text": "5. Adding new content\nNew probability chapter: - Create notes/probability/ch02-combinatorics.qmd - Add a row to the table in notes/probability/index.qmd - Push — the site rebuilds automatically\nNew article or notebook: - Drop a .qmd or .ipynb file into articles/ - It appears automatically in the articles listing\nNew Python project: - Drop a .qmd or .ipynb file into projects/ - Update projects/index.qmd with a card"
+  },
+  {
+    "objectID": "SETUP.html#local-workflow",
+    "href": "SETUP.html#local-workflow",
+    "title": "",
+    "section": "6. Local workflow",
+    "text": "6. Local workflow\n# Live preview with hot reload\nquarto preview\n\n# One-off render\nquarto render\nQuarto caches executed notebook output (freeze: auto in _quarto.yml), so re-renders are fast — only changed files re-execute."
+  },
+  {
+    "objectID": "articles/index.html",
+    "href": "articles/index.html",
+    "title": "Articles",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#planning",
+    "href": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#planning",
+    "title": "",
+    "section": "Planning",
+    "text": "Planning\n\nIf not provided or if target language definition is ambiguous, ask for examples of valid strings to be parsed\nBefore developing the pyparsing expressions, define a Backus-Naur Form definition and save this in docs/grammar.md. Update this document as changes are made in the parser."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#implementing",
+    "href": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#implementing",
+    "title": "",
+    "section": "Implementing",
+    "text": "Implementing\n\nImport pyparsing using import pyparsing as pp, and use that for all pyparsing references.\n\nIf referencing names from pyparsing.common, follow the pyparsing import with “ppc = pp.common” and use ppc as the namespace to access pyparsing.common.\nIf referencing names from pyparsing.unicode, follow the pyparsing import with “ppu = pp.unicode” and use ppu as the namespace to access pyparsing.unicode.\n\nWhen writing parsers that contain recursive elements (using Forward() or infix_notation()), immediately enable packrat parsing for performance: pp.ParserElement.enable_packrat() (call this right after importing pyparsing). See https://pyparsing-docs.readthedocs.io/en/latest/HowToUsePyparsing.html.\n\nFor recursive grammars, define placeholders with pp.Forward() and assign later using the &lt;&lt;= operator; give Forwards meaningful names with set_name() to improve errors.\n\nUse PEP8 method and argument names in the pyparsing API (parse_string, not parseString).\nDo not include expressions for matching whitespace in the grammar. Pyparsing skips whitespace by default.\nFor line-oriented grammars where newlines are significant, set skippable whitespace to just spaces/tabs early: pp.ParserElement.set_default_whitespace_chars(\" \\t\"), and define NL = pp.LineEnd().suppress() to handle line ends explicitly.\nPrefer operator forms for readability: use +, |, ^, ~, etc., instead of explicit And/MatchFirst/Or/Not classes (see Usage notes in https://pyparsing-docs.readthedocs.io/en/latest/HowToUsePyparsing.html).\nUse set_name() on all major grammar elements to support railroad diagramming and better error/debug output.\nThe grammar should be independently testable, without pulling in separate modules for data structures, evaluation, or command execution.\nUse results names for robust access to parsed data fields; results names should be valid Python identifiers to support attribute-style access on returned ParseResults.\n\nResults names should take the place of numeric indexing into parsed results in most places.\nDefine results names using call format not set_results_name(), example: full_name = Word(alphas)(\"first_name\") + Word(alphas)(\"last_name\")\nIf adding results name to an expression that is contains one more sub-expressions with results names, the expression must be inclused in a Group.\n\nPrefer Keyword over Literal for reserved words to avoid partial matches (e.g., Keyword(\"for\") will not match the leading “for” in “format”).\n\nUse pp.CaselessKeyword/pp.CaselessLiteral when keywords should match regardless of case.\n\nWhen the full input must be consumed, call parse_string with parse_all=True.\nIf the grammar must handle comments, define an expression for them and use the ignore() method to skip them.\n\nPrefer built-ins like pp.cpp_style_comment and pp.python_style_comment for common comment syntaxes.\n\nUse pyparsing Group to organize sub-expressions. Groups are also important for preserving results names when a sub-expression is used in a OneOrMore or ZeroOrMore expression.\nSuppress punctuation tokens to keep results clean; a convenient pattern is LBRACK, RBRACK, LBRACE, RBRACE, COLON = pp.Suppress.using_each(\"[]{}:\").\nFor comma-separated sequences, prefer pp.DelimitedList(...); wrap with pp.Optional(...) to allow empty lists or objects where appropriate.\nFor helper sub-expressions used only to build larger expressions, consider set_name(None) to keep result dumps uncluttered.\nUse pyparsing Each() to define a list of elements that may occur in any order.\n\nThe ‘&’ operator is the operator form of Each and is often more readable when combining order-independent parts.\n\nUse parse actions to do parse-time conversion of data from strings to useful data types.\n\nUse objects defined in pyparsing.common for common types like integer, real — these already have their conversion parse actions defined.\nFor quoted strings, use pp.dbl_quoted_string().set_parse_action(pp.remove_quotes) to unquote automatically.\nMap reserved words to Python constants per this example for parsing “true” to auto-convert to a Python True: pp.Keyword(\"true\").set_parse_action(pp.replace_with(True)) (and similarly for false/null/etc.).\nWhen you want native Python containers from the parse, use pp.Group(..., aslist=True) for lists and pp.Dict(..., asdict=True) for dict-like data.\n\nUse “using_each” with a list of keywords to define keyword constants, instead of separate assignments.\nChoose the appropriate matching method:\n\nparse_string() parses from the start\nsearch_string() searches anywhere in the text\nscan_string() yields all matches with positions\ntransform_string() is a convenience wrapper around scan_string to apply filters or transforms defined in parse actions, to perform batch transforms or conversions of expressions within a larger body of text\n\nFor line suffixes or directives, combine lookahead and slicing helpers: pp.FollowedBy(...) with pp.rest_of_line; when reusing a base expression with a different parse action, call .copy() before applying the new action to avoid side effects.\nWhen defining a parser to be used in a REPL:\n\nadd pyparsing Tag() elements of the form Tag(\"command\", &lt;command-name&gt;) to each command definition to support model construction from parsed commands.\ndefine model classes using dataclasses, and use the “command” attribute in the parsed results to identify which model class to create. The model classes can then be used to construct the model from the ParseResults returned by parse_string(). Define the models in a separate parser_models.py file.\n\nIf defining the grammar as part of a Parser class, only the finished grammar needs to be implemented as an instance variable.\nParseResults support “in” testing for results names. Use “in” tests for the existence of results names, not hasattr().\nAvoid left recursion where possible. If you must support left-recursive grammars, enable it with pp.ParserElement.enable_left_recursion() and do not enable packrat at the same time (these modes are incompatible).\nUse pp.SkipTo as a skipping expression to skip over arbitrary content.\n\nFor example, pp.SkipTo(pp.LineEnd()) will skip over all content until the end of the line; add a stop_on argument to SkipTo to stop skipping when a particular string is matched.\nUse ... in place of simple SkipTo(expression)"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#testing",
+    "href": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#testing",
+    "title": "",
+    "section": "Testing",
+    "text": "Testing\n\nUse the pyparsing ParserElement.run_tests method to run mini validation tests.\n\nPass a single multiline string to run_tests to test the parser on multiple test input strings, each line is a separate test.\nYou can add comments starting with “#” within the string passed to run_tests to document the individual test cases.\nTo pass test input strings that span multiple lines, pass the test input strings as a list of strings.\nPass parse_all=True to run_tests to test that the entire input is consumed.\n\nWhen generating unit tests for the parser:\n\ngenerate tests that include presence and absence of optional elements\nuse the methods in the mixin class pyparsing.testing.TestParseResultsAsserts to easily define expression, test input string, and expected results\ndo not generate tests for invalid data"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#debugging",
+    "href": "ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html#debugging",
+    "title": "",
+    "section": "Debugging",
+    "text": "Debugging\n\nIf troubleshooting parse actions, use pyparsing’s trace_parse_action decorator to echo arguments and return value\nDuring development, call pp.autoname_elements() to auto-assign names to unnamed expressions to improve dump() and error messages.\nSub-expressions can be tested in isolation using ParserElement.matches()\nWhen defined out of order, Literals can mistakenly match fragments: Literal(\"for\") will match the leading “for” in “format”. Can be corrected by using Keyword instead of Literal.\nDump the parsed results using ParseResults.dump(), ParseResults.pprint(), or repr(ParseResults)."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/seaborn-0.13.2.dist-info/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/seaborn-0.13.2.dist-info/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nCopyright (c) 2012-2023, Michael L. Waskom All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the project nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nThis software is dual-licensed under the The University of Illinois/NCSA Open Source License (NCSA) and The 3-Clause BSD License\n\nNCSA Open Source License\nCopyright (c) 2019 Kevin Sheppard. All rights reserved.\nDeveloped by: Kevin Sheppard (kevin.sheppard@economics.ox.ac.uk, kevin.k.sheppard@gmail.com) http://www.kevinsheppard.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.\nNeither the names of Kevin Sheppard, nor the names of any contributors may be used to endorse or promote products derived from this Software without specific prior written permission.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE SOFTWARE.\n\n\n3-Clause BSD License\nCopyright (c) 2019 Kevin Sheppard. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nComponents\nMany parts of this module have been derived from original sources, often the algorithm’s designer. Component licenses are located with the component code."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.html#the-mit-license",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.html#the-mit-license",
+    "title": "",
+    "section": "The MIT License",
+    "text": "The MIT License\nAdapted from a C++ implementation of Chris Doty-Humphrey’s SFC PRNG.\nhttps://gist.github.com/imneme/f1f7821f07cf76504a97f6537c818083\nCopyright (c) 2018 Melissa E. O’Neill\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\n\nPHILOX\nCopyright 2010-2012, D. E. Shaw Research. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions, and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions, and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of D. E. Shaw Research nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html#numpy",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html#numpy",
+    "title": "",
+    "section": "NumPy",
+    "text": "NumPy\nCopyright (c) 2005-2017, NumPy Developers. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the NumPy Developers nor the names of any contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html#julia",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html#julia",
+    "title": "",
+    "section": "Julia",
+    "text": "Julia\nThe ziggurat methods were derived from Julia.\nCopyright (c) 2009-2019: Jeff Bezanson, Stefan Karpinski, Viral B. Shah, and other contributors:\nhttps://github.com/JuliaLang/julia/contributors\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/numpy/random/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/numpy/random/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nThis software is dual-licensed under the The University of Illinois/NCSA Open Source License (NCSA) and The 3-Clause BSD License\n\nNCSA Open Source License\nCopyright (c) 2019 Kevin Sheppard. All rights reserved.\nDeveloped by: Kevin Sheppard (kevin.sheppard@economics.ox.ac.uk, kevin.k.sheppard@gmail.com) http://www.kevinsheppard.com\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.\nNeither the names of Kevin Sheppard, nor the names of any contributors may be used to endorse or promote products derived from this Software without specific prior written permission.\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE SOFTWARE.\n\n\n3-Clause BSD License\nCopyright (c) 2019 Kevin Sheppard. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nComponents\nMany parts of this module have been derived from original sources, often the algorithm’s designer. Component licenses are located with the component code."
+  },
+  {
+    "objectID": "ghp-venv/lib/python3.11/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.html",
+    "href": "ghp-venv/lib/python3.11/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.html",
+    "title": "",
+    "section": "",
+    "text": "Code\n\n\n\n\n\nCopyright © 2019, Encode OSS Ltd. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\nRedistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\nNeither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sebastian Lech",
+    "section": "",
+    "text": "I’m working through probability theory and its applications, with a focus on the mathematical foundations that underpin quantitative finance. These pages are my working notes — problems, proofs, and Python explorations.\nCurrently working through: Feller, An Introduction to Probability Theory and Its Applications, Vol. 1.\n\n\n\n\nGitHub\nlech.sebastianp@gmail.com"
+  },
+  {
+    "objectID": "index.html#notes",
+    "href": "index.html#notes",
+    "title": "Sebastian Lech",
+    "section": "Notes",
+    "text": "Notes\nWorking notes and problem sets, organised by topic.\n\n\nProbability Theory\nFeller Vol. 1 — sample spaces, combinatorics, distributions, limit theorems. With quant finance problem sets."
+  },
+  {
+    "objectID": "index.html#articles",
+    "href": "index.html#articles",
+    "title": "Sebastian Lech",
+    "section": "Articles",
+    "text": "Articles\n\n\nEigenvalues & Eigenvectors\nTwo quick applications. July 2021\n\n\nSingular Value Decomposition\nApplications and intuition. July 2021\n\n\nToronto Temperature — Time Series\nSeasonal decomposition and forecasting. June 2021\n\n\nCanadian Treasury Yield Curves\nYield, forward, and par curves from Canadian government data. June 2021"
+  },
+  {
+    "objectID": "notes/probability/index.html",
+    "href": "notes/probability/index.html",
+    "title": "Probability Theory",
+    "section": "",
+    "text": "These are my working notes for William Feller’s An Introduction to Probability Theory and Its Applications (Feller 1968). Each chapter page has conceptual notes followed by a problem set. Finance-motivated problems (marked in blue) connect the classical theory to derivatives pricing, portfolio risk, and market microstructure."
+  },
+  {
+    "objectID": "notes/probability/index.html#chapters",
+    "href": "notes/probability/index.html#chapters",
+    "title": "Probability Theory",
+    "section": "Chapters",
+    "text": "Chapters\n\n\n\nChapter\nTopic\nNotes\nProblems\n\n\n\n\n1\nThe Sample Space\n✓\n✓\n\n\n2\nCombinatorial Analysis\nin progress\n\n\n\n3\nFluctuations in Coin Tossing\n\n\n\n\n4\nCombination of Events\n\n\n\n\n5\nConditional Probability\n\n\n\n\n9\nRandom Variables — Expectation\n\n\n\n\n10\nLaws of Large Numbers"
+  },
+  {
+    "objectID": "notes/probability/index.html#problem-set-sources",
+    "href": "notes/probability/index.html#problem-set-sources",
+    "title": "Probability Theory",
+    "section": "Problem Set Sources",
+    "text": "Problem Set Sources\nBeyond Feller, finance problems are drawn from (Zhou 2008), (Joshi 2008), and (Ross 2014)."
+  }
+]
