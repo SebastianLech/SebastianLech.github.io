@@ -1,71 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/notes/probability/ch01-sample-space.html</loc>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/notebooks/index.html</loc>
+    <lastmod>2026-05-28T02:26:44.945Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/notes/probability/index.html</loc>
     <lastmod>2026-05-28T02:05:15.371Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/about.html</loc>
-    <lastmod>2026-05-28T02:05:15.369Z</lastmod>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/index.html</loc>
+    <lastmod>2026-05-28T02:26:11.270Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/pyzmq-27.1.0.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:17.197Z</lastmod>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:29.049Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/narwhals-2.21.2.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:19.135Z</lastmod>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy/random/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:18.169Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:25.261Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.html</loc>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html</loc>
     <lastmod>2026-05-28T02:11:18.052Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:18.051Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:18.051Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:18.051Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/idna-3.16.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:19.418Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/soupsieve-2.8.4.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:17.147Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/projects/index.html</loc>
-    <lastmod>2026-05-28T02:05:15.371Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/SETUP.html</loc>
-    <lastmod>2026-05-28T02:05:15.368Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/articles/index.html</loc>
-    <lastmod>2026-05-28T02:05:15.369Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html</loc>
-    <lastmod>2026-05-28T02:11:17.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/seaborn-0.13.2.dist-info/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:29.113Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.html</loc>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.html</loc>
     <lastmod>2026-05-28T02:11:18.051Z</lastmod>
   </url>
   <url>
@@ -73,27 +33,79 @@
     <lastmod>2026-05-28T02:11:18.051Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.html</loc>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.html</loc>
     <lastmod>2026-05-28T02:11:18.051Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.html</loc>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/seaborn-0.13.2.dist-info/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:29.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/pyparsing/ai/best_practices.html</loc>
+    <lastmod>2026-05-28T02:11:17.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/articles/index.html</loc>
+    <lastmod>2026-05-28T02:05:15.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/SETUP.html</loc>
+    <lastmod>2026-05-28T02:05:15.368Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/working-problems/probability/index.html</loc>
+    <lastmod>2026-05-28T02:26:19.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/working-problems/probability/ch01.html</loc>
+    <lastmod>2026-05-28T02:26:41.310Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/projects/index.html</loc>
+    <lastmod>2026-05-28T02:05:15.371Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/soupsieve-2.8.4.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:17.147Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/idna-3.16.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:19.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:18.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:18.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:18.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.html</loc>
     <lastmod>2026-05-28T02:11:18.052Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/numpy/random/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:18.169Z</lastmod>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:25.261Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.html</loc>
-    <lastmod>2026-05-28T02:11:29.049Z</lastmod>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/narwhals-2.21.2.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:19.135Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/index.html</loc>
-    <lastmod>2026-05-28T02:05:15.370Z</lastmod>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/ghp-venv/lib/python3.11/site-packages/pyzmq-27.1.0.dist-info/licenses/LICENSE.html</loc>
+    <lastmod>2026-05-28T02:11:17.197Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sebastianlech.github.io/notes/probability/index.html</loc>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/about.html</loc>
+    <lastmod>2026-05-28T02:05:15.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SebastianLech.github.io/sebastianlech.github.io/notes/probability/ch01-sample-space.html</loc>
     <lastmod>2026-05-28T02:05:15.371Z</lastmod>
   </url>
 </urlset>

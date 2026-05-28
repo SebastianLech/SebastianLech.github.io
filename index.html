@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -309,13 +309,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./articles/index.html"> 
-<span class="menu-text">Articles</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-working-problems" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Working Problems</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-working-problems">    
+        <li>
+    <a class="dropdown-item" href="./working-problems/probability/index.html">
+ <span class="dropdown-text">Probability — Feller</span></a>
   </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./projects/index.html"> 
-<span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="./notebooks/index.html"> 
+<span class="menu-text">Notebooks</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -337,12 +344,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -353,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     
   
@@ -365,51 +372,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="grid">
-<div class="g-col-12 g-col-md-8">
-<p>I’m working through probability theory and its applications, with a focus on the mathematical foundations that underpin quantitative finance. These pages are my working notes — problems, proofs, and Python explorations.</p>
+<p>I’m working through probability theory and its applications, with a focus on the mathematical foundations that underpin quantitative finance. These pages are my working notes — definitions, proofs, problem sets, and Python explorations.</p>
 <p><strong>Currently working through:</strong> Feller, <em>An Introduction to Probability Theory and Its Applications</em>, Vol. 1.</p>
-</div>
-<section id="find-me" class="level3 g-col-12 g-col-md-4">
-<h3 class="anchored" data-anchor-id="find-me">Find me</h3>
-<ul>
-<li><a href="https://github.com/SebastianLech">GitHub</a></li>
-<li><a href="mailto:lech.sebastianp@gmail.com">lech.sebastianp@gmail.com</a></li>
-</ul>
-</section>
-</div>
 <hr>
 <section id="notes" class="level2">
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<p>Working notes and problem sets, organised by topic.</p>
-<div class="grid">
-<section id="probability-theory" class="level3 g-col-12 g-col-md-4 card" style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;">
-<h3 class="anchored" data-anchor-id="probability-theory"><a href="./notes/probability/index.html">Probability Theory</a></h3>
-<p>Feller Vol. 1 — sample spaces, combinatorics, distributions, limit theorems. With quant finance problem sets.</p>
-</section>
-</div>
+<p>Conceptual notes organised by topic and chapter.</p>
+<section id="probability-theory" class="level3">
+<h3 class="anchored" data-anchor-id="probability-theory">Probability Theory</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Chapter</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./notes/probability/ch01-sample-space.html">1 — The Sample Space</a></td>
+<td>Sample spaces, events, combinatorics</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="articles" class="level2">
-<h2 class="anchored" data-anchor-id="articles">Articles</h2>
-<div class="grid">
-<section id="eigenvalues-eigenvectors" class="level3 g-col-12 g-col-md-6 card" style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;">
-<h3 class="anchored" data-anchor-id="eigenvalues-eigenvectors"><a href="articles/eigen.qmd">Eigenvalues &amp; Eigenvectors</a></h3>
-<p>Two quick applications. <em>July 2021</em></p>
 </section>
-<section id="singular-value-decomposition" class="level3 g-col-12 g-col-md-6 card" style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;">
-<h3 class="anchored" data-anchor-id="singular-value-decomposition"><a href="articles/svd.qmd">Singular Value Decomposition</a></h3>
-<p>Applications and intuition. <em>July 2021</em></p>
+<section id="working-problems" class="level2">
+<h2 class="anchored" data-anchor-id="working-problems">Working Problems</h2>
+<p>Problem sets with solutions, sourced from Feller with quant finance extensions.</p>
+<section id="probability-feller-vol.-1" class="level3">
+<h3 class="anchored" data-anchor-id="probability-feller-vol.-1">Probability — Feller Vol. 1</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Problem Set</th>
+<th>Topics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./working-problems/probability/ch01.html">Chapter 1</a></td>
+<td>Sample spaces, counting, conditional probability</td>
+</tr>
+</tbody>
+</table>
+<hr>
 </section>
-<section id="toronto-temperature-time-series" class="level3 g-col-12 g-col-md-6 card" style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;">
-<h3 class="anchored" data-anchor-id="toronto-temperature-time-series"><a href="articles/toronto-temp.qmd">Toronto Temperature — Time Series</a></h3>
-<p>Seasonal decomposition and forecasting. <em>June 2021</em></p>
 </section>
-<section id="canadian-treasury-yield-curves" class="level3 g-col-12 g-col-md-6 card" style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;">
-<h3 class="anchored" data-anchor-id="canadian-treasury-yield-curves"><a href="articles/treasury.qmd">Canadian Treasury Yield Curves</a></h3>
-<p>Yield, forward, and par curves from Canadian government data. <em>June 2021</em></p>
-</section>
-</div>
+<section id="notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="notebooks">Notebooks</h2>
+<p>Jupyter notebooks — data analysis, visualisation, and applied projects.</p>
+<p><em>Add your notebooks to <code>notebooks/</code> and they’ll appear here.</em></p>
+<hr>
+<p><a href="./about.html">About</a> &nbsp;·&nbsp; <a href="https://github.com/SebastianLech">GitHub</a></p>
 
 
 <!-- -->
@@ -884,77 +899,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Sebastian Lech"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Notes on probability, mathematics, and quantitative finance."</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>::: {.grid}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-8}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>I'm working through probability theory and its applications, with a focus on the mathematical foundations that underpin quantitative finance. These pages are my working notes — problems, proofs, and Python explorations.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>**Currently working through:** Feller, *An Introduction to Probability Theory and Its Applications*, Vol. 1.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-4}</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">### Find me</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/SebastianLech)</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">lech.sebastianp\@gmail.com</span><span class="co">](mailto:lech.sebastianp@gmail.com)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>I'm working through probability theory and its applications, with a focus on the mathematical foundations that underpin quantitative finance. These pages are my working notes — definitions, proofs, problem sets, and Python explorations.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Currently working through:** Feller, *An Introduction to Probability Theory and Its Applications*, Vol. 1.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notes</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Conceptual notes organised by topic and chapter.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Probability Theory</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Chapter <span class="pp">|</span> Topic <span class="pp">|</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|-------|</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">1 — The Sample Space</span><span class="co">](notes/probability/ch01-sample-space.qmd)</span> <span class="pp">|</span> Sample spaces, events, combinatorics <span class="pp">|</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working Problems</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Problem sets with solutions, sourced from Feller with quant finance extensions.</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Probability — Feller Vol. 1</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notes</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Working notes and problem sets, organised by topic.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Problem Set <span class="pp">|</span> Topics <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------|--------|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](working-problems/probability/ch01.qmd)</span> <span class="pp">|</span> Sample spaces, counting, conditional probability <span class="pp">|</span></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>::: {.grid}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-4 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Probability Theory](notes/probability/index.qmd)</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Feller Vol. 1 — sample spaces, combinatorics, distributions, limit theorems. With quant finance problem sets.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Articles</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {.grid}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Eigenvalues &amp; Eigenvectors](articles/eigen.qmd)</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Two quick applications.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>*July 2021*</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Singular Value Decomposition](articles/svd.qmd)</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Applications and intuition.</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>*July 2021*</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Toronto Temperature — Time Series](articles/toronto-temp.qmd)</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Seasonal decomposition and forecasting.</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>*June 2021*</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Canadian Treasury Yield Curves](articles/treasury.qmd)</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>Yield, forward, and par curves from Canadian government data.</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>*June 2021*</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notebooks</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Jupyter notebooks — data analysis, visualisation, and applied projects.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>*Add your notebooks to `notebooks/` and they'll appear here.*</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">About</span><span class="co">](about.qmd)</span> <span class="dv">&amp;nbsp;</span>·<span class="dv">&amp;nbsp;</span> <span class="co">[</span><span class="ot">GitHub</span><span class="co">](https://github.com/SebastianLech)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
