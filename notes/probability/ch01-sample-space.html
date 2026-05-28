@@ -81,9 +81,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-2ef6a94245f12baa06fbec5d279dd64e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-9732953f4f49b91b22c63c5c5a0ebf91.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-2ef6a94245f12baa06fbec5d279dd64e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-162c1c9927ce7d3acccb10d493ba080a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8143a022bfdcdcbbc10ba19fd929714c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-162c1c9927ce7d3acccb10d493ba080a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -157,6 +157,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../../assets/textbook.css">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -443,61 +444,40 @@ window.Quarto = {
 
 <section id="events-and-sample-spaces" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="events-and-sample-spaces"><span class="header-section-number">1</span> Events and Sample Spaces</h2>
-<p>Consider an experiment and its events, characterised by a <strong>sample space</strong> <span class="math inline">\Omega</span> and the points within it.</p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definitions — Events
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Given two events <span class="math inline">A</span> and <span class="math inline">B</span>:</p>
+<p>Consider an experiment whose possible outcomes form a <strong>sample space</strong> <span class="math inline">\Omega</span>. Each outcome is a point in <span class="math inline">\Omega</span>, and any subset of <span class="math inline">\Omega</span> is called an <strong>event</strong>.</p>
+<div id="def-events" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Events)</strong></span> Given events <span class="math inline">A</span> and <span class="math inline">B</span> in a sample space <span class="math inline">\Omega</span>:</p>
 <ul>
-<li><span class="math inline">AB</span> denotes the event “<span class="math inline">A</span> <strong>and</strong> <span class="math inline">B</span>” (intersection)</li>
-<li><span class="math inline">A \cup B</span> denotes the event “<span class="math inline">A</span> <strong>or</strong> <span class="math inline">B</span>” (union)</li>
-<li>If <span class="math inline">AB = \emptyset</span> we say <span class="math inline">A</span> and <span class="math inline">B</span> are <strong>mutually exclusive</strong></li>
-<li>If every point in <span class="math inline">A</span> is in <span class="math inline">B</span>, we write <span class="math inline">A \subset B</span> (“<span class="math inline">A</span> implies <span class="math inline">B</span>”)</li>
-<li><span class="math inline">A - B</span> denotes the event “<span class="math inline">A</span> occurs but not <span class="math inline">B</span>”</li>
-<li><span class="math inline">\bar{A}</span> denotes the complement of <span class="math inline">A</span></li>
+<li><span class="math inline">AB = A \cap B</span> is the event that both <span class="math inline">A</span> and <span class="math inline">B</span> occur.</li>
+<li><span class="math inline">A \cup B</span> is the event that at least one of <span class="math inline">A</span>, <span class="math inline">B</span> occurs.</li>
+<li><span class="math inline">A</span> and <span class="math inline">B</span> are <strong>mutually exclusive</strong> if <span class="math inline">AB = \emptyset</span>.</li>
+<li><span class="math inline">A \subset B</span> means every outcome in <span class="math inline">A</span> is also in <span class="math inline">B</span> (<span class="math inline">A</span> implies <span class="math inline">B</span>).</li>
+<li><span class="math inline">A - B</span> is the event that <span class="math inline">A</span> occurs but <span class="math inline">B</span> does not.</li>
+<li><span class="math inline">\bar{A} = \Omega - A</span> is the <strong>complement</strong> of <span class="math inline">A</span>.</li>
 </ul>
 </div>
-</div>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition — Probability on a Discrete Space
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Given a discrete sample space <span class="math inline">\Omega = \{E_1, E_2, \ldots\}</span>, a <strong>probability</strong> is an assignment of non-negative numbers <span class="math inline">\mathbb{P}(E_j)</span> to each sample point such that <span class="math display">\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.</span> The probability of an event <span class="math inline">A</span> is then <span class="math inline">\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j)</span>.</p>
-</div>
+<div id="def-probability" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Probability on a Discrete Space)</strong></span> Given a discrete sample space <span class="math inline">\Omega = \{E_1, E_2, \ldots\}</span>, a <strong>probability measure</strong> is an assignment of non-negative numbers <span class="math inline">\mathbb{P}(E_j)</span> to each sample point satisfying <span class="math display">\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.</span> The probability of an event <span class="math inline">A \subset \Omega</span> is <span class="math display">\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j).</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example — Two Coin Flips
+<span class="screen-reader-only">Tip</span>Example — Two coin flips
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Flip a fair coin twice. The sample space is <span class="math inline">\Omega = \{HH, HT, TH, TT\}</span>.</p>
-<p>Let <span class="math inline">A</span> = heads on the first toss, <span class="math inline">B</span> = tails on the second toss. Then:</p>
+<p>Let <span class="math inline">\Omega = \{HH, HT, TH, TT\}</span> with each outcome equally likely. Set <span class="math inline">A</span> = heads on the first toss, <span class="math inline">B</span> = tails on the second toss.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Event</th>
 <th>Elements</th>
-<th>Probability</th>
+<th><span class="math inline">\mathbb{P}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -523,6 +503,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p>Note <span class="math inline">\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(AB) = 1/2 + 1/2 - 1/4 = 3/4</span>.</p>
 </div>
 </div>
 </div>
@@ -532,37 +513,35 @@ window.Quarto = {
 <h2 data-number="2" class="anchored" data-anchor-id="combinatorial-analysis"><span class="header-section-number">2</span> Combinatorial Analysis</h2>
 <section id="permutations" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="permutations"><span class="header-section-number">2.1</span> Permutations</h3>
-<p>Consider a population of <span class="math inline">n</span> distinct items and a sample of size <span class="math inline">r</span>. The number of ordered samples is:</p>
+<p>Consider a population of <span class="math inline">n</span> distinct elements. An <strong>ordered sample</strong> of size <span class="math inline">r</span> drawn from the population can be selected in:</p>
 <ul>
-<li><strong>with replacement:</strong> <span class="math inline">n^r</span></li>
-<li><strong>without replacement:</strong> <span class="math inline">(n)_r = n(n-1)\cdots(n-r+1)</span></li>
+<li><span class="math inline">n^r</span> ways <strong>with replacement</strong>,</li>
+<li><span class="math inline">(n)_r = n(n-1)\cdots(n-r+1)</span> ways <strong>without replacement</strong>.</li>
 </ul>
-<p>When <span class="math inline">r = n</span> we get all orderings of the full set: <span class="math display">(n)_n = n! = n(n-1)(n-2)\cdots 2 \cdot 1.</span></p>
+<p>When <span class="math inline">r = n</span>, an ordered selection without replacement is a <strong>permutation</strong> of the full set: <span class="math display">(n)_n = n! = n(n-1)\cdots 2 \cdot 1.</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example — Probability of Five Distinct Digits
+<span class="screen-reader-only">Tip</span>Example — Five distinct digits
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>What is the probability that five randomly drawn digits (0–9, with replacement) are all different?</p>
-<p><span class="math display">\frac{(10)_5}{10^5} = \frac{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6}{100000} = \frac{30240}{100000} = 0.3024.</span></p>
+<p>What is the probability that five digits drawn independently and uniformly from <span class="math inline">\{0,\ldots,9\}</span> are all different?</p>
+<p>The total number of outcomes is <span class="math inline">10^5</span>. The number of outcomes with all digits distinct is <span class="math inline">(10)_5 = 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 = 30240</span>. Thus <span class="math display">\mathbb{P}(\text{all distinct}) = \frac{30240}{100000} = 0.3024.</span></p>
 </div>
 </div>
 </div>
 </section>
 <section id="sec-birthday" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="sec-birthday"><span class="header-section-number">2.2</span> The Birthday Problem</h3>
-<p>What is the probability that at least two people in a group of <span class="math inline">n</span> share a birthday?</p>
-<p>The probability that <strong>no two</strong> share a birthday is <span class="math display">p_{\text{no match}} = \frac{(365)_n}{365^n} = \left(1 - \frac{1}{365}\right)\left(1 - \frac{2}{365}\right)\cdots\left(1 - \frac{n-1}{365}\right).</span></p>
-<p>For small <span class="math inline">n</span>, ignoring terms of order <span class="math inline">(1/365)^2</span> and higher: <span class="math display">p_{\text{no match}} \approx 1 - \frac{1 + 2 + \cdots + (n-1)}{365} = 1 - \frac{n(n-1)}{730}.</span></p>
-<p>So <span class="math display">\mathbb{P}(\text{at least one match}) \approx \frac{n(n-1)}{730} \quad \text{for small } n.</span></p>
-<p>For larger <span class="math inline">n</span> use the log approximation <span class="math inline">\log(1-x) \approx -x</span>: <span class="math display">\log p_{\text{no match}} \approx -\frac{1 + 2 + \cdots + (n-1)}{365} = -\frac{n(n-1)}{730}</span> giving <span class="math inline">p_{\text{no match}} \approx e^{-n(n-1)/730}</span>.</p>
+<p>What is the probability that in a group of <span class="math inline">n</span> people, at least two share a birthday? Treating all 365 days as equally likely and ignoring leap years, the probability that <strong>no two</strong> share a birthday is</p>
+<p><span class="math display">p_{\text{no match}} = \frac{(365)_n}{365^n} = \prod_{k=0}^{n-1}\left(1 - \frac{k}{365}\right).</span></p>
+<p>For small <span class="math inline">n</span>, dropping terms of order <span class="math inline">(1/365)^2</span>: <span class="math display">p_{\text{no match}} \approx 1 - \frac{n(n-1)}{730},</span> so <span class="math inline">\mathbb{P}(\text{at least one match}) \approx n(n-1)/730</span>. For larger <span class="math inline">n</span>, taking logs and using <span class="math inline">\log(1-x)\approx -x</span>: <span class="math display">p_{\text{no match}} \approx e^{-n(n-1)/730}.</span> The crossover point <span class="math inline">p_{\text{match}} \geq 1/2</span> occurs at <span class="math inline">n = 23</span>.</p>
 <div id="cell-fig-birthday" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
@@ -570,87 +549,63 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n_vals <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">70</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Exact computation</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>p_no_match <span class="op">=</span> np.ones(<span class="bu">len</span>(n_vals))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, n <span class="kw">in</span> <span class="bu">enumerate</span>(n_vals):</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        p <span class="op">*=</span> (<span class="dv">365</span> <span class="op">-</span> k) <span class="op">/</span> <span class="dv">365</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    p_no_match[i] <span class="op">=</span> p</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>p_match <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p_no_match</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>ax.plot(n_vals, p_match, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">'50%'</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">23</span>, color<span class="op">=</span><span class="st">'coral'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">'n = 23'</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Group size $n$'</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">$(at least one shared birthday)'</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Birthday Problem'</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>n50 <span class="op">=</span> <span class="bu">next</span>(n <span class="cf">for</span> n, p <span class="kw">in</span> <span class="bu">zip</span>(n_vals, p_match) <span class="cf">if</span> p <span class="op">&gt;=</span> <span class="fl">0.5</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Group size needed for &gt;50% probability: </span><span class="sc">{</span>n50<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>p_no_match <span class="op">=</span> np.array([np.prod([(<span class="dv">365</span><span class="op">-</span>k)<span class="op">/</span><span class="dv">365</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)]) <span class="cf">for</span> n <span class="kw">in</span> n_vals])</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p_match <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p_no_match</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">3.8</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>ax.plot(n_vals, p_match, color<span class="op">=</span><span class="st">'#2a6496'</span>, linewidth<span class="op">=</span><span class="fl">1.8</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'#888'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">'50%'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">23</span>, color<span class="op">=</span><span class="st">'#c0392b'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">'$n=23$'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Group size $n$'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">$(at least one shared birthday)'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>,<span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-birthday" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-birthday-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch01-sample-space_files/figure-html/fig-birthday-output-1.png" width="660" height="372" class="figure-img">
+<img src="ch01-sample-space_files/figure-html/fig-birthday-output-1.png" width="612" height="353" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-birthday-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size
+Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size.
 </figcaption>
 </figure>
 </div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Group size needed for &gt;50% probability: 23</code></pre>
 </div>
 </div>
 </section>
 <section id="combinations" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="combinations"><span class="header-section-number">2.3</span> Combinations</h3>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="thm-binomial" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Binomial Coefficient)</strong></span> The number of unordered subsets of size <span class="math inline">r</span> drawn from <span class="math inline">n</span> elements is <span class="math display">\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Theorem — Binomial Coefficient
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>From <span class="math inline">n</span> elements we can form <span class="math inline">(n)_r</span> ordered samples of size <span class="math inline">r</span>. Each unordered subset of size <span class="math inline">r</span> appears exactly <span class="math inline">r!</span> times among these (once for each ordering of its elements), so the number of unordered subsets is <span class="math inline">(n)_r / r!</span>.</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The number of ways to choose a group of <span class="math inline">r</span> items from <span class="math inline">n</span> (order irrelevant) is <span class="math display">\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.</span></p>
-</div>
-</div>
-<p><strong>Why?</strong> Start with <span class="math inline">(n)_r</span> ordered selections. Each unordered group of size <span class="math inline">r</span> has been counted <span class="math inline">r!</span> times (once for each ordering), so divide by <span class="math inline">r!</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example — Understanding <span class="math inline">\binom{5}{3} = 10</span>
+<span class="screen-reader-only">Tip</span>Example — <span class="math inline">\binom{5}{3} = 10</span>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We want groups of 3 from <span class="math inline">\{1,2,3,4,5\}</span>.</p>
-<ul>
-<li>Total ordered arrangements: <span class="math inline">5! = 120</span></li>
-<li>Each group of 3 can be ordered <span class="math inline">3! = 6</span> ways (overcounting factor)</li>
-<li>The leftover <span class="math inline">5-3=2</span> items can be arranged <span class="math inline">2! = 2</span> ways (also overcounting)</li>
-</ul>
-<p><span class="math display">\binom{5}{3} = \frac{5!}{3!\cdot 2!} = \frac{120}{6 \cdot 2} = 10.</span></p>
+<p>We want unordered groups of 3 from <span class="math inline">\{1,2,3,4,5\}</span>. There are <span class="math inline">5! = 120</span> total orderings of all five elements. Each group of 3 appears in <span class="math inline">3! = 6</span> orderings among the first three positions, and the remaining <span class="math inline">2! = 2</span> orderings of the last two positions are irrelevant. So <span class="math display">\binom{5}{3} = \frac{5!}{3!\cdot 2!} = \frac{120}{12} = 10.</span></p>
 </div>
 </div>
 </div>
+<div id="thm-binomial-theorem" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Binomial Theorem)</strong></span> For any real <span class="math inline">x, y</span> and non-negative integer <span class="math inline">n</span>, <span class="math display">(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}.</span></p>
+</div>
+<p>Setting <span class="math inline">x = y = 1</span> gives <span class="math inline">\sum_{k=0}^n \binom{n}{k} = 2^n</span>, the total number of subsets of an <span class="math inline">n</span>-element set.</p>
 <hr>
 </section>
 </section>
@@ -658,9 +613,9 @@ Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size
 <h2 data-number="3" class="anchored" data-anchor-id="problem-set"><span class="header-section-number">3</span> Problem Set</h2>
 <section id="core-problems-feller" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="core-problems-feller"><span class="header-section-number">3.1</span> Core Problems (Feller)</h3>
-<p><strong>Problem 1.1.</strong> Among the digits <span class="math inline">1, 2, 3, 4, 5</span> first one is chosen, and then a second selection is made among the remaining four. Assume all twenty outcomes are equally likely. Find the probability that an odd digit is selected (a) the first time; (b) the second time; (c) both times.</p>
+<p><strong>Problem 1.1.</strong> Among the digits <span class="math inline">1, 2, 3, 4, 5</span> first one is chosen, and then a second from the remaining four. Assume all twenty outcomes equally likely. Find the probability that an odd digit is selected (a) first; (b) second; (c) both times.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -669,27 +624,20 @@ Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Write out the sample space:</p>
-<p><span class="math display">\begin{array}{ccccc}
-(1,2) &amp; (2,1) &amp; (3,1) &amp; (4,1) &amp; (5,1) \\
-(1,3) &amp; (2,3) &amp; (3,2) &amp; (4,2) &amp; (5,2) \\
-(1,4) &amp; (2,4) &amp; (3,4) &amp; (4,3) &amp; (5,3) \\
-(1,5) &amp; (2,5) &amp; (3,5) &amp; (4,5) &amp; (5,4)
-\end{array}</span></p>
-<p>The odd digits are <span class="math inline">\{1, 3, 5\}</span>.</p>
+<p>Write out the <span class="math inline">5 \times 4 = 20</span> ordered pairs. The odd digits are <span class="math inline">\{1, 3, 5\}</span>.</p>
 <ol type="a">
-<li><p>Outcomes with odd first digit: rows with first element in <span class="math inline">\{1,3,5\}</span> — that’s <span class="math inline">3 \times 4 = 12</span> outcomes. <span class="math inline">\mathbb{P} = 12/20 = 3/5</span>.</p></li>
-<li><p>By symmetry, <span class="math inline">\mathbb{P}(\text{second odd}) = 3/5</span> as well. (Each position is equally likely to take each value.)</p></li>
-<li><p>Both odd: pairs <span class="math inline">(o_1, o_2)</span> with <span class="math inline">o_1 \neq o_2</span>, both in <span class="math inline">\{1,3,5\}</span>. Count: <span class="math inline">3 \times 2 = 6</span>. <span class="math inline">\mathbb{P} = 6/20 = 3/10</span>.</p></li>
+<li><p>Outcomes with an odd first digit: <span class="math inline">3 \times 4 = 12</span>, so <span class="math inline">\mathbb{P} = 12/20 = 3/5</span>.</p></li>
+<li><p>By symmetry, each position is equally likely to take any value, so <span class="math inline">\mathbb{P}(\text{second odd}) = 3/5</span>.</p></li>
+<li><p>Both odd: choose the first odd in 3 ways, the second in 2 ways, giving <span class="math inline">3 \times 2 = 6</span> outcomes. <span class="math inline">\mathbb{P} = 6/20 = 3/10</span>.</p></li>
 </ol>
 </div>
 </div>
 </div>
-<p><strong>Problem 1.2.</strong> A coin is tossed until for the first time the same result appears twice in succession. Assign probability <span class="math inline">1/2^n</span> to each outcome requiring <span class="math inline">n</span> tosses. (a) Describe the sample space. (b) Find <span class="math inline">\mathbb{P}(\text{ends before toss 6})</span>. (c) Find <span class="math inline">\mathbb{P}(\text{even number of tosses})</span>.</p>
+<p><strong>Problem 1.2.</strong> A coin is tossed until the same result appears twice in succession. Assign probability <span class="math inline">1/2^n</span> to each outcome requiring <span class="math inline">n</span> tosses. (a) Describe the sample space. (b) Find <span class="math inline">\mathbb{P}(\text{ends before toss 6})</span>. (c) Find <span class="math inline">\mathbb{P}(\text{even number of tosses})</span>.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -698,24 +646,17 @@ Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The sample space consists of strings of length <span class="math inline">n \geq 2</span> where the first <span class="math inline">n-2</span> characters alternate (<span class="math inline">HT\ldots</span> or <span class="math inline">TH\ldots</span>) and the last two are identical:</p>
-<p><span class="math display">\begin{array}{rll}
-n=2: &amp; HH, &amp; TT \\
-n=3: &amp; THH, &amp; HTT \\
-n=4: &amp; HTHH, &amp; THTT \\
-&amp; \vdots
-\end{array}</span></p>
-<p>Each length <span class="math inline">n</span> contributes 2 outcomes each with probability <span class="math inline">1/2^n</span>.</p>
-<p><strong>(b)</strong> End before toss 6 means <span class="math inline">n \in \{2,3,4,5\}</span>: <span class="math display">2\left(\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}\right) = 2 \cdot \frac{8+4+2+1}{32} = \frac{30}{32} = \frac{15}{16}.</span></p>
-<p><strong>(c)</strong> Even <span class="math inline">n</span> means <span class="math inline">n = 2, 4, 6, \ldots</span>: <span class="math display">\sum_{k=1}^{\infty} \frac{2}{2^{2k}} = 2\sum_{k=1}^{\infty}\frac{1}{4^k} = 2 \cdot \frac{1/4}{1-1/4} = \frac{2}{3}.</span></p>
+<p>The sample space consists of strings of length <span class="math inline">n \geq 2</span> where the first <span class="math inline">n-2</span> characters alternate (<span class="math inline">HTH\ldots</span> or <span class="math inline">THT\ldots</span>) and the last two are identical. For each <span class="math inline">n</span> there are exactly 2 outcomes, each with probability <span class="math inline">1/2^n</span>.</p>
+<p><strong>(b)</strong> Sum over <span class="math inline">n \in \{2,3,4,5\}</span>: <span class="math display">2\!\left(\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}\right) = \frac{30}{32} = \frac{15}{16}.</span></p>
+<p><strong>(c)</strong> Sum over even <span class="math inline">n = 2, 4, 6, \ldots</span>: <span class="math display">2\sum_{k=1}^{\infty}\frac{1}{4^k} = 2 \cdot \frac{1/4}{1-1/4} = \frac{2}{3}.</span></p>
 </div>
 </div>
 </div>
-<p><strong>Problem 1.3.</strong> Two dice are thrown. Let <span class="math inline">A</span> = sum is odd, <span class="math inline">B</span> = at least one ace. Find <span class="math inline">\mathbb{P}(AB)</span>, <span class="math inline">\mathbb{P}(A \cup B)</span>, <span class="math inline">\mathbb{P}(A\bar{B})</span>.</p>
+<p><strong>Problem 1.3.</strong> Two dice are thrown. Let <span class="math inline">A</span> = sum is odd, <span class="math inline">B</span> = at least one ace. Find <span class="math inline">\mathbb{P}(AB)</span>, <span class="math inline">\mathbb{P}(A \cup B)</span>, <span class="math inline">\mathbb{P}(A\bar{B})</span> assuming all 36 outcomes equally likely.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -724,10 +665,10 @@ n=4: &amp; HTHH, &amp; THTT \\
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>With 36 equally likely outcomes: - <span class="math inline">\mathbb{P}(A) = 18/36 = 1/2</span> (odd sum) - <span class="math inline">\mathbb{P}(B) = 11/36</span> (at least one ace: <span class="math inline">6+6-1=11</span> outcomes) - <span class="math inline">\mathbb{P}(AB) = 6/36 = 1/6</span> (odd sum <em>and</em> at least one ace — enumerate: <span class="math inline">(1,2),(1,4),(1,6),(2,1),(4,1),(6,1)</span>)</p>
-<p>Then: <span class="math display">\mathbb{P}(A \cup B) = \frac{18}{36} + \frac{11}{36} - \frac{6}{36} = \frac{23}{36}</span> <span class="math display">\mathbb{P}(A\bar{B}) = \mathbb{P}(A) - \mathbb{P}(AB) = \frac{18}{36} - \frac{6}{36} = \frac{1}{3}.</span></p>
+<p><span class="math inline">\mathbb{P}(A) = 18/36 = 1/2</span>. For <span class="math inline">B</span>: there are <span class="math inline">6 + 6 - 1 = 11</span> outcomes with at least one ace, so <span class="math inline">\mathbb{P}(B) = 11/36</span>. The outcomes in <span class="math inline">AB</span> (odd sum and at least one ace) are <span class="math inline">(1,2),(1,4),(1,6),(2,1),(4,1),(6,1)</span>, giving <span class="math inline">\mathbb{P}(AB) = 6/36</span>.</p>
+<p><span class="math display">\mathbb{P}(A \cup B) = \tfrac{18}{36} + \tfrac{11}{36} - \tfrac{6}{36} = \frac{23}{36}, \qquad \mathbb{P}(A\bar{B}) = \mathbb{P}(A) - \mathbb{P}(AB) = \frac{12}{36} = \frac{1}{3}.</span></p>
 </div>
 </div>
 </div>
@@ -735,95 +676,55 @@ n=4: &amp; HTHH, &amp; THTT \\
 </section>
 <section id="quant-finance-problems" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="quant-finance-problems"><span class="header-section-number">3.2</span> Quant Finance Problems</h3>
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Problem QF-1 — Gambler’s Ruin.</strong> A trader has $3 and plays fair $1 bets, stopping at $0 or $6.</p>
+<p><strong>QF-1 — Gambler’s Ruin.</strong> A trader starts with $3 and makes fair $1 bets, stopping at $0 or $6.</p>
 <ol type="a">
-<li>Find her probability of ruin using the formula <span class="math inline">p_k = 1 - k/N</span>.</li>
-<li>If bets are unfair with win probability <span class="math inline">p \neq 1/2</span>, the ruin probability is <span class="math inline">\displaystyle\frac{(q/p)^k - (q/p)^N}{1 - (q/p)^N}</span> where <span class="math inline">q = 1-p</span>. Compute this for <span class="math inline">p = 0.45</span>, <span class="math inline">k = 3</span>, <span class="math inline">N = 6</span>.</li>
-<li>What does this tell you about edge (positive expected value) in trading?</li>
+<li>Find her probability of ruin using <span class="math inline">p_k = 1 - k/N</span>.</li>
+<li>For unfair bets with win probability <span class="math inline">p \neq 1/2</span>, the ruin probability from stake <span class="math inline">k</span> with target <span class="math inline">N</span> is <span class="math inline">\bigl[(q/p)^k - (q/p)^N\bigr] / \bigl[1 - (q/p)^N\bigr]</span> where <span class="math inline">q = 1-p</span>. Compute for <span class="math inline">p = 0.45</span>.</li>
+<li>What does this say about trading without edge?</li>
 </ol>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Problem QF-2 — CRR Binomial Model.</strong> Stock <span class="math inline">S_0 = 100</span> moves up by <span class="math inline">u=1.1</span> or down by <span class="math inline">d=0.9</span> each day for 3 days.</p>
+<p><strong>QF-2 — CRR Binomial Model.</strong> Stock <span class="math inline">S_0 = 100</span>, <span class="math inline">u = 1.1</span>, <span class="math inline">d = 0.9</span>, 3 periods, <span class="math inline">r = 0</span>.</p>
 <ol type="a">
-<li>Describe <span class="math inline">\Omega</span> and its 8 paths.</li>
-<li>List paths with <span class="math inline">S_3 &gt; 105</span> (i.e., at least two up-moves).</li>
-<li>Compute <span class="math inline">\mathbb{P}(S_3 &gt; 105)</span> with real-world <span class="math inline">p = 0.6</span>.</li>
-<li>Find the risk-neutral probability <span class="math inline">\tilde{p}</span> satisfying <span class="math inline">\tilde{p}\cdot u + (1-\tilde{p})\cdot d = 1</span> (zero interest rate). Recompute (c) under <span class="math inline">\tilde{p}</span>.</li>
+<li>Enumerate all 8 paths.</li>
+<li>Find <span class="math inline">\mathbb{P}(S_3 &gt; 105)</span> under real-world <span class="math inline">p = 0.6</span>.</li>
+<li>Find the risk-neutral probability <span class="math inline">\tilde{p}</span> satisfying <span class="math inline">\tilde{p}\,u + (1-\tilde{p})\,d = 1</span> and recompute.</li>
 </ol>
-<p><em>This is the Cox-Ross-Rubinstein model — the simplest framework for pricing options.</em></p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-important no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Problem QF-3 — Bayes and Regime Detection.</strong> A market is in trending state <span class="math inline">T</span> with prior <span class="math inline">\mathbb{P}(T) = 0.4</span>. A momentum signal fires on 70% of trending days and 20% of mean-reverting days.</p>
+<p><strong>QF-3 — Bayesian Regime Detection.</strong> Prior <span class="math inline">\mathbb{P}(\text{trending}) = 0.4</span>. A momentum signal fires on 70% of trending days and 20% of mean-reverting days.</p>
 <ol type="a">
-<li>Compute the posterior <span class="math inline">\mathbb{P}(T \mid \text{signal})</span>.</li>
-<li>After two independent signals, what is <span class="math inline">\mathbb{P}(T \mid \text{two signals})</span>?</li>
-<li>At what prior does a single signal leave you at 50% posterior?</li>
+<li>Posterior after one signal. (b) After two signals. (c) Prior needed for 50% posterior after one signal.</li>
 </ol>
-</div>
-</div>
-</div>
 <div id="cell-fig-bayes-update" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>p_T <span class="op">=</span> <span class="fl">0.4</span>          <span class="co"># prior P(T)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>p_signal_T <span class="op">=</span> <span class="fl">0.70</span>  <span class="co"># P(signal | T)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>p_signal_M <span class="op">=</span> <span class="fl">0.20</span>  <span class="co"># P(signal | M)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>k_vals <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">8</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> []</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> p_T</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> k_vals:</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    posteriors.append(prior)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bayes update</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    likelihood_T <span class="op">=</span> p_signal_T</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    likelihood_M <span class="op">=</span> p_signal_M</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    posterior <span class="op">=</span> (prior <span class="op">*</span> likelihood_T) <span class="op">/</span> (prior <span class="op">*</span> likelihood_T <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> prior) <span class="op">*</span> likelihood_M)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    prior <span class="op">=</span> posterior</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax.plot(k_vals, posteriors, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, markersize<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">'50% threshold'</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Number of consecutive positive signals'</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">(</span><span class="ch">\\</span><span class="st">text</span><span class="sc">{Trending}</span><span class="st"> </span><span class="ch">\\</span><span class="st">mid </span><span class="ch">\\</span><span class="st">text</span><span class="sc">{signals}</span><span class="st">)$'</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Bayesian Regime Detection'</span>)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>p_T, p_s_T, p_s_M <span class="op">=</span> <span class="fl">0.4</span>, <span class="fl">0.70</span>, <span class="fl">0.20</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>posteriors, prior <span class="op">=</span> [], p_T</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    posteriors.append(prior)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    prior <span class="op">=</span> (prior <span class="op">*</span> p_s_T) <span class="op">/</span> (prior <span class="op">*</span> p_s_T <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> prior) <span class="op">*</span> p_s_M)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">3.8</span>))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="bu">range</span>(<span class="dv">8</span>), posteriors, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'#2a6496'</span>, linewidth<span class="op">=</span><span class="fl">1.8</span>, markersize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'#888'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">'50%'</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Consecutive positive signals $k$'</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">(</span><span class="ch">\\</span><span class="st">text</span><span class="sc">{Trending}</span><span class="st"> </span><span class="ch">\\</span><span class="st">mid k</span><span class="ch">\\</span><span class="st"> </span><span class="ch">\\</span><span class="st">text</span><span class="sc">{signals}</span><span class="st">)$'</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>,<span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-bayes-update" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bayes-update-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ch01-sample-space_files/figure-html/fig-bayes-update-output-1.png" width="661" height="374" class="figure-img">
+<img src="ch01-sample-space_files/figure-html/fig-bayes-update-output-1.png" width="613" height="353" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bayes-update-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Bayesian posterior after observing k consecutive positive signals
+Figure&nbsp;2: Posterior probability of trending regime after <span class="math inline">k</span> consecutive positive signals.
 </figcaption>
 </figure>
 </div>
@@ -1301,288 +1202,237 @@ Figure&nbsp;2: Bayesian posterior after observing k consecutive positive signals
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 1: The Sample Space"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Feller — Probability Theory and Its Applications"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-01-02</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 3</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../references.bib</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Events and Sample Spaces</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Consider an experiment and its events, characterised by a **sample space** $\Omega$ and the points within it.</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Definitions — Events</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>Given two events $A$ and $B$:</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$AB$ denotes the event "$A$ **and** $B$" (intersection)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$A \cup B$ denotes the event "$A$ **or** $B$" (union)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If $AB = \emptyset$ we say $A$ and $B$ are **mutually exclusive**</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If every point in $A$ is in $B$, we write $A \subset B$ ("$A$ implies $B$")</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$A - B$ denotes the event "$A$ occurs but not $B$"</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\bar{A}$ denotes the complement of $A$</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Definition — Probability on a Discrete Space</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>Given a discrete sample space $\Omega = <span class="sc">\{</span>E_1, E_2, \ldots<span class="sc">\}</span>$, a **probability** is an assignment of non-negative numbers $\mathbb{P}(E_j)$ to each sample point such that</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.$$</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>The probability of an event $A$ is then $\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j)$.</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example — Two Coin Flips</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>Flip a fair coin twice. The sample space is $\Omega = <span class="sc">\{</span>HH, HT, TH, TT<span class="sc">\}</span>$.</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>Let $A$ = heads on the first toss, $B$ = tails on the second toss. Then:</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Event <span class="pp">|</span> Elements <span class="pp">|</span> Probability <span class="pp">|</span></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------|----------|-------------|</span></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $A$ <span class="pp">|</span> $<span class="sc">\{</span>HH, HT<span class="sc">\}</span>$ <span class="pp">|</span> $1/2$ <span class="pp">|</span></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $B$ <span class="pp">|</span> $<span class="sc">\{</span>HT, TT<span class="sc">\}</span>$ <span class="pp">|</span> $1/2$ <span class="pp">|</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $AB$ <span class="pp">|</span> $<span class="sc">\{</span>HT<span class="sc">\}</span>$ <span class="pp">|</span> $1/4$ <span class="pp">|</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $A \cup B$ <span class="pp">|</span> $<span class="sc">\{</span>HH, HT, TT<span class="sc">\}</span>$ <span class="pp">|</span> $3/4$ <span class="pp">|</span></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combinatorial Analysis</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### Permutations</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>Consider a population of $n$ distinct items and a sample of size $r$. The number of ordered samples is:</span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**with replacement:** $n^r$</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**without replacement:** $(n)_r = n(n-1)\cdots(n-r+1)$</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>When $r = n$ we get all orderings of the full set:</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>$$(n)_n = n! = n(n-1)(n-2)\cdots 2 \cdot 1.$$</span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example — Probability of Five Distinct Digits</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>What is the probability that five randomly drawn digits (0–9, with replacement) are all different?</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>$$\frac{(10)_5}{10^5} = \frac{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6}{100000} = \frac{30240}{100000} = 0.3024.$$</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Birthday Problem {#sec-birthday}</span></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>What is the probability that at least two people in a group of $n$ share a birthday?</span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>The probability that **no two** share a birthday is</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>$$p_{\text{no match}} = \frac{(365)_n}{365^n} = \left(1 - \frac{1}{365}\right)\left(1 - \frac{2}{365}\right)\cdots\left(1 - \frac{n-1}{365}\right).$$</span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>For small $n$, ignoring terms of order $(1/365)^2$ and higher:</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>$$p_{\text{no match}} \approx 1 - \frac{1 + 2 + \cdots + (n-1)}{365} = 1 - \frac{n(n-1)}{730}.$$</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>So</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(\text{at least one match}) \approx \frac{n(n-1)}{730} \quad \text{for small } n.$$</span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>For larger $n$ use the log approximation $\log(1-x) \approx -x$:</span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>$$\log p_{\text{no match}} \approx -\frac{1 + 2 + \cdots + (n-1)}{365} = -\frac{n(n-1)}{730}$$</span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>giving $p_{\text{no match}} \approx e^{-n(n-1)/730}$.</span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-birthday</span></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Probability of at least one shared birthday vs. group size"</span></span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>n_vals <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">70</span>)</span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="co"># Exact computation</span></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>p_no_match <span class="op">=</span> np.ones(<span class="bu">len</span>(n_vals))</span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, n <span class="kw">in</span> <span class="bu">enumerate</span>(n_vals):</span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>        p <span class="op">*=</span> (<span class="dv">365</span> <span class="op">-</span> k) <span class="op">/</span> <span class="dv">365</span></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>    p_no_match[i] <span class="op">=</span> p</span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a>p_match <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p_no_match</span>
-<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a>ax.plot(n_vals, p_match, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">'50%'</span>)</span>
-<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">23</span>, color<span class="op">=</span><span class="st">'coral'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">'n = 23'</span>)</span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Group size $n$'</span>)</span>
-<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">$(at least one shared birthday)'</span>)</span>
-<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Birthday Problem'</span>)</span>
-<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>n50 <span class="op">=</span> <span class="bu">next</span>(n <span class="cf">for</span> n, p <span class="kw">in</span> <span class="bu">zip</span>(n_vals, p_match) <span class="cf">if</span> p <span class="op">&gt;=</span> <span class="fl">0.5</span>)</span>
-<span id="cb4-125"><a href="#cb4-125" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Group size needed for &gt;50% probability: </span><span class="sc">{</span>n50<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-126"><a href="#cb4-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-127"><a href="#cb4-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-128"><a href="#cb4-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Combinations</span></span>
-<span id="cb4-129"><a href="#cb4-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-130"><a href="#cb4-130" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple"}</span>
-<span id="cb4-131"><a href="#cb4-131" aria-hidden="true" tabindex="-1"></a><span class="fu">## Theorem — Binomial Coefficient</span></span>
-<span id="cb4-132"><a href="#cb4-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-133"><a href="#cb4-133" aria-hidden="true" tabindex="-1"></a>The number of ways to choose a group of $r$ items from $n$ (order irrelevant) is</span>
-<span id="cb4-134"><a href="#cb4-134" aria-hidden="true" tabindex="-1"></a>$$\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.$$</span>
-<span id="cb4-135"><a href="#cb4-135" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-136"><a href="#cb4-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-137"><a href="#cb4-137" aria-hidden="true" tabindex="-1"></a>**Why?** Start with $(n)_r$ ordered selections. Each unordered group of size $r$ has been counted $r!$ times (once for each ordering), so divide by $r!$.</span>
-<span id="cb4-138"><a href="#cb4-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-139"><a href="#cb4-139" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
-<span id="cb4-140"><a href="#cb4-140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example — Understanding $\binom{5}{3} = 10$</span></span>
-<span id="cb4-141"><a href="#cb4-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-142"><a href="#cb4-142" aria-hidden="true" tabindex="-1"></a>We want groups of 3 from $<span class="sc">\{</span>1,2,3,4,5<span class="sc">\}</span>$.</span>
-<span id="cb4-143"><a href="#cb4-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Total ordered arrangements: $5! = 120$</span>
-<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Each group of 3 can be ordered $3! = 6$ ways (overcounting factor)</span>
-<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The leftover $5-3=2$ items can be arranged $2! = 2$ ways (also overcounting)</span>
-<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>$$\binom{5}{3} = \frac{5!}{3!\cdot 2!} = \frac{120}{6 \cdot 2} = 10.$$</span>
-<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem Set</span></span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a><span class="fu">### Core Problems (Feller)</span></span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>**Problem 1.1.** Among the digits $1, 2, 3, 4, 5$ first one is chosen, and then a second selection is made among the remaining four. Assume all twenty outcomes are equally likely. Find the probability that an odd digit is selected (a) the first time; (b) the second time; (c) both times.</span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution collapse="true"}</span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a><span class="fu">## Solution</span></span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>Write out the sample space:</span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>$$\begin{array}{ccccc}</span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>(1,2) &amp; (2,1) &amp; (3,1) &amp; (4,1) &amp; (5,1) <span class="sc">\\</span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>(1,3) &amp; (2,3) &amp; (3,2) &amp; (4,2) &amp; (5,2) <span class="sc">\\</span></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>(1,4) &amp; (2,4) &amp; (3,4) &amp; (4,3) &amp; (5,3) <span class="sc">\\</span></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>(1,5) &amp; (2,5) &amp; (3,5) &amp; (4,5) &amp; (5,4)</span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>\end{array}$$</span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>The odd digits are $<span class="sc">\{</span>1, 3, 5<span class="sc">\}</span>$.</span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>(a) Outcomes with odd first digit: rows with first element in $<span class="sc">\{</span>1,3,5<span class="sc">\}</span>$ — that's $3 \times 4 = 12$ outcomes. $\mathbb{P} = 12/20 = 3/5$.</span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>(b) By symmetry, $\mathbb{P}(\text{second odd}) = 3/5$ as well. (Each position is equally likely to take each value.)</span>
-<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a>(c) Both odd: pairs $(o_1, o_2)$ with $o_1 \neq o_2$, both in $<span class="sc">\{</span>1,3,5<span class="sc">\}</span>$. Count: $3 \times 2 = 6$. $\mathbb{P} = 6/20 = 3/10$.</span>
-<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>**Problem 1.2.** A coin is tossed until for the first time the same result appears twice in succession. Assign probability $1/2^n$ to each outcome requiring $n$ tosses. (a) Describe the sample space. (b) Find $\mathbb{P}(\text{ends before toss 6})$. (c) Find $\mathbb{P}(\text{even number of tosses})$.</span>
-<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution collapse="true"}</span>
-<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Solution</span></span>
-<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-185"><a href="#cb4-185" aria-hidden="true" tabindex="-1"></a>The sample space consists of strings of length $n \geq 2$ where the first $n-2$ characters alternate ($HT\ldots$ or $TH\ldots$) and the last two are identical:</span>
-<span id="cb4-186"><a href="#cb4-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-187"><a href="#cb4-187" aria-hidden="true" tabindex="-1"></a>$$\begin{array}{rll}</span>
-<span id="cb4-188"><a href="#cb4-188" aria-hidden="true" tabindex="-1"></a>n=2: &amp; HH, &amp; TT <span class="sc">\\</span></span>
-<span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a>n=3: &amp; THH, &amp; HTT <span class="sc">\\</span></span>
-<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a>n=4: &amp; HTHH, &amp; THTT <span class="sc">\\</span></span>
-<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a>&amp; \vdots</span>
-<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a>\end{array}$$</span>
-<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a>Each length $n$ contributes 2 outcomes each with probability $1/2^n$.</span>
-<span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a>**(b)** End before toss 6 means $n \in <span class="sc">\{</span>2,3,4,5<span class="sc">\}</span>$:</span>
-<span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a>$$2\left(\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}\right) = 2 \cdot \frac{8+4+2+1}{32} = \frac{30}{32} = \frac{15}{16}.$$</span>
-<span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a>**(c)** Even $n$ means $n = 2, 4, 6, \ldots$:</span>
-<span id="cb4-200"><a href="#cb4-200" aria-hidden="true" tabindex="-1"></a>$$\sum_{k=1}^{\infty} \frac{2}{2^{2k}} = 2\sum_{k=1}^{\infty}\frac{1}{4^k} = 2 \cdot \frac{1/4}{1-1/4} = \frac{2}{3}.$$</span>
-<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a>**Problem 1.3.** Two dice are thrown. Let $A$ = sum is odd, $B$ = at least one ace. Find $\mathbb{P}(AB)$, $\mathbb{P}(A \cup B)$, $\mathbb{P}(A\bar{B})$.</span>
-<span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution collapse="true"}</span>
-<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a><span class="fu">## Solution</span></span>
-<span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-208"><a href="#cb4-208" aria-hidden="true" tabindex="-1"></a>With 36 equally likely outcomes:</span>
-<span id="cb4-209"><a href="#cb4-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(A) = 18/36 = 1/2$ (odd sum)</span>
-<span id="cb4-210"><a href="#cb4-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(B) = 11/36$ (at least one ace: $6+6-1=11$ outcomes)</span>
-<span id="cb4-211"><a href="#cb4-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\mathbb{P}(AB) = 6/36 = 1/6$ (odd sum *and* at least one ace — enumerate: $(1,2),(1,4),(1,6),(2,1),(4,1),(6,1)$)</span>
-<span id="cb4-212"><a href="#cb4-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-213"><a href="#cb4-213" aria-hidden="true" tabindex="-1"></a>Then:</span>
-<span id="cb4-214"><a href="#cb4-214" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(A \cup B) = \frac{18}{36} + \frac{11}{36} - \frac{6}{36} = \frac{23}{36}$$</span>
-<span id="cb4-215"><a href="#cb4-215" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(A\bar{B}) = \mathbb{P}(A) - \mathbb{P}(AB) = \frac{18}{36} - \frac{6}{36} = \frac{1}{3}.$$</span>
-<span id="cb4-216"><a href="#cb4-216" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-217"><a href="#cb4-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-218"><a href="#cb4-218" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb4-219"><a href="#cb4-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-220"><a href="#cb4-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quant Finance Problems</span></span>
-<span id="cb4-221"><a href="#cb4-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-222"><a href="#cb4-222" aria-hidden="true" tabindex="-1"></a>::: {.callout-important appearance="minimal"}</span>
-<span id="cb4-223"><a href="#cb4-223" aria-hidden="true" tabindex="-1"></a>**Problem QF-1 — Gambler's Ruin.** A trader has \$3 and plays fair \$1 bets, stopping at \$0 or \$6.</span>
-<span id="cb4-224"><a href="#cb4-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-225"><a href="#cb4-225" aria-hidden="true" tabindex="-1"></a>(a) Find her probability of ruin using the formula $p_k = 1 - k/N$.</span>
-<span id="cb4-226"><a href="#cb4-226" aria-hidden="true" tabindex="-1"></a>(b) If bets are unfair with win probability $p \neq 1/2$, the ruin probability is $\displaystyle\frac{(q/p)^k - (q/p)^N}{1 - (q/p)^N}$ where $q = 1-p$. Compute this for $p = 0.45$, $k = 3$, $N = 6$.</span>
-<span id="cb4-227"><a href="#cb4-227" aria-hidden="true" tabindex="-1"></a>(c) What does this tell you about edge (positive expected value) in trading?</span>
-<span id="cb4-228"><a href="#cb4-228" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-229"><a href="#cb4-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-230"><a href="#cb4-230" aria-hidden="true" tabindex="-1"></a>::: {.callout-important appearance="minimal"}</span>
-<span id="cb4-231"><a href="#cb4-231" aria-hidden="true" tabindex="-1"></a>**Problem QF-2 — CRR Binomial Model.** Stock $S_0 = 100$ moves up by $u=1.1$ or down by $d=0.9$ each day for 3 days.</span>
-<span id="cb4-232"><a href="#cb4-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-233"><a href="#cb4-233" aria-hidden="true" tabindex="-1"></a>(a) Describe $\Omega$ and its 8 paths.</span>
-<span id="cb4-234"><a href="#cb4-234" aria-hidden="true" tabindex="-1"></a>(b) List paths with $S_3 &gt; 105$ (i.e., at least two up-moves).</span>
-<span id="cb4-235"><a href="#cb4-235" aria-hidden="true" tabindex="-1"></a>(c) Compute $\mathbb{P}(S_3 &gt; 105)$ with real-world $p = 0.6$.</span>
-<span id="cb4-236"><a href="#cb4-236" aria-hidden="true" tabindex="-1"></a>(d) Find the risk-neutral probability $\tilde{p}$ satisfying $\tilde{p}\cdot u + (1-\tilde{p})\cdot d = 1$ (zero interest rate). Recompute (c) under $\tilde{p}$.</span>
-<span id="cb4-237"><a href="#cb4-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-238"><a href="#cb4-238" aria-hidden="true" tabindex="-1"></a>*This is the Cox-Ross-Rubinstein model — the simplest framework for pricing options.*</span>
-<span id="cb4-239"><a href="#cb4-239" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-240"><a href="#cb4-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-241"><a href="#cb4-241" aria-hidden="true" tabindex="-1"></a>::: {.callout-important appearance="minimal"}</span>
-<span id="cb4-242"><a href="#cb4-242" aria-hidden="true" tabindex="-1"></a>**Problem QF-3 — Bayes and Regime Detection.** A market is in trending state $T$ with prior $\mathbb{P}(T) = 0.4$. A momentum signal fires on 70% of trending days and 20% of mean-reverting days.</span>
-<span id="cb4-243"><a href="#cb4-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-244"><a href="#cb4-244" aria-hidden="true" tabindex="-1"></a>(a) Compute the posterior $\mathbb{P}(T \mid \text{signal})$.</span>
-<span id="cb4-245"><a href="#cb4-245" aria-hidden="true" tabindex="-1"></a>(b) After two independent signals, what is $\mathbb{P}(T \mid \text{two signals})$?</span>
-<span id="cb4-246"><a href="#cb4-246" aria-hidden="true" tabindex="-1"></a>(c) At what prior does a single signal leave you at 50% posterior?</span>
-<span id="cb4-247"><a href="#cb4-247" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-248"><a href="#cb4-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-251"><a href="#cb4-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb4-252"><a href="#cb4-252" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bayes-update</span></span>
-<span id="cb4-253"><a href="#cb4-253" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Bayesian posterior after observing k consecutive positive signals"</span></span>
-<span id="cb4-254"><a href="#cb4-254" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb4-255"><a href="#cb4-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-256"><a href="#cb4-256" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-257"><a href="#cb4-257" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-258"><a href="#cb4-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-259"><a href="#cb4-259" aria-hidden="true" tabindex="-1"></a>p_T <span class="op">=</span> <span class="fl">0.4</span>          <span class="co"># prior P(T)</span></span>
-<span id="cb4-260"><a href="#cb4-260" aria-hidden="true" tabindex="-1"></a>p_signal_T <span class="op">=</span> <span class="fl">0.70</span>  <span class="co"># P(signal | T)</span></span>
-<span id="cb4-261"><a href="#cb4-261" aria-hidden="true" tabindex="-1"></a>p_signal_M <span class="op">=</span> <span class="fl">0.20</span>  <span class="co"># P(signal | M)</span></span>
-<span id="cb4-262"><a href="#cb4-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-263"><a href="#cb4-263" aria-hidden="true" tabindex="-1"></a>k_vals <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">8</span>)</span>
-<span id="cb4-264"><a href="#cb4-264" aria-hidden="true" tabindex="-1"></a>posteriors <span class="op">=</span> []</span>
-<span id="cb4-265"><a href="#cb4-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-266"><a href="#cb4-266" aria-hidden="true" tabindex="-1"></a>prior <span class="op">=</span> p_T</span>
-<span id="cb4-267"><a href="#cb4-267" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> k_vals:</span>
-<span id="cb4-268"><a href="#cb4-268" aria-hidden="true" tabindex="-1"></a>    posteriors.append(prior)</span>
-<span id="cb4-269"><a href="#cb4-269" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Bayes update</span></span>
-<span id="cb4-270"><a href="#cb4-270" aria-hidden="true" tabindex="-1"></a>    likelihood_T <span class="op">=</span> p_signal_T</span>
-<span id="cb4-271"><a href="#cb4-271" aria-hidden="true" tabindex="-1"></a>    likelihood_M <span class="op">=</span> p_signal_M</span>
-<span id="cb4-272"><a href="#cb4-272" aria-hidden="true" tabindex="-1"></a>    posterior <span class="op">=</span> (prior <span class="op">*</span> likelihood_T) <span class="op">/</span> (prior <span class="op">*</span> likelihood_T <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> prior) <span class="op">*</span> likelihood_M)</span>
-<span id="cb4-273"><a href="#cb4-273" aria-hidden="true" tabindex="-1"></a>    prior <span class="op">=</span> posterior</span>
-<span id="cb4-274"><a href="#cb4-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-275"><a href="#cb4-275" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
-<span id="cb4-276"><a href="#cb4-276" aria-hidden="true" tabindex="-1"></a>ax.plot(k_vals, posteriors, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, markersize<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb4-277"><a href="#cb4-277" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span><span class="st">'50% threshold'</span>)</span>
-<span id="cb4-278"><a href="#cb4-278" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Number of consecutive positive signals'</span>)</span>
-<span id="cb4-279"><a href="#cb4-279" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">(</span><span class="ch">\\</span><span class="st">text</span><span class="sc">{Trending}</span><span class="st"> </span><span class="ch">\\</span><span class="st">mid </span><span class="ch">\\</span><span class="st">text</span><span class="sc">{signals}</span><span class="st">)$'</span>)</span>
-<span id="cb4-280"><a href="#cb4-280" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Bayesian Regime Detection'</span>)</span>
-<span id="cb4-281"><a href="#cb4-281" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb4-282"><a href="#cb4-282" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb4-283"><a href="#cb4-283" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb4-284"><a href="#cb4-284" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-285"><a href="#cb4-285" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-286"><a href="#cb4-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 1: The Sample Space"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Feller — Probability Theory and Its Applications"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-01-02</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 3</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../references.bib</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Events and Sample Spaces</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Consider an experiment whose possible outcomes form a **sample space** $\Omega$. Each outcome is a point in $\Omega$, and any subset of $\Omega$ is called an **event**.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>::: {#def-events}</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Events</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Given events $A$ and $B$ in a sample space $\Omega$:</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$AB = A \cap B$ is the event that both $A$ and $B$ occur.</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$A \cup B$ is the event that at least one of $A$, $B$ occurs.</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$A$ and $B$ are **mutually exclusive** if $AB = \emptyset$.</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$A \subset B$ means every outcome in $A$ is also in $B$ ($A$ implies $B$).</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$A - B$ is the event that $A$ occurs but $B$ does not.</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\bar{A} = \Omega - A$ is the **complement** of $A$.</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>::: {#def-probability}</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Probability on a Discrete Space</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>Given a discrete sample space $\Omega = <span class="sc">\{</span>E_1, E_2, \ldots<span class="sc">\}</span>$, a **probability measure** is an assignment of non-negative numbers $\mathbb{P}(E_j)$ to each sample point satisfying</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.$$</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>The probability of an event $A \subset \Omega$ is</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j).$$</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example — Two coin flips</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>Let $\Omega = <span class="sc">\{</span>HH, HT, TH, TT<span class="sc">\}</span>$ with each outcome equally likely. Set $A$ = heads on the first toss, $B$ = tails on the second toss.</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Event <span class="pp">|</span> Elements <span class="pp">|</span> $\mathbb{P}$ <span class="pp">|</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------|----------|------|</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $A$ <span class="pp">|</span> $<span class="sc">\{</span>HH, HT<span class="sc">\}</span>$ <span class="pp">|</span> $1/2$ <span class="pp">|</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $B$ <span class="pp">|</span> $<span class="sc">\{</span>HT, TT<span class="sc">\}</span>$ <span class="pp">|</span> $1/2$ <span class="pp">|</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $AB$ <span class="pp">|</span> $<span class="sc">\{</span>HT<span class="sc">\}</span>$ <span class="pp">|</span> $1/4$ <span class="pp">|</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $A \cup B$ <span class="pp">|</span> $<span class="sc">\{</span>HH, HT, TT<span class="sc">\}</span>$ <span class="pp">|</span> $3/4$ <span class="pp">|</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>Note $\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(AB) = 1/2 + 1/2 - 1/4 = 3/4$.</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combinatorial Analysis</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Permutations</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>Consider a population of $n$ distinct elements. An **ordered sample** of size $r$ drawn from the population can be selected in:</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$n^r$ ways **with replacement**,</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$(n)_r = n(n-1)\cdots(n-r+1)$ ways **without replacement**.</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>When $r = n$, an ordered selection without replacement is a **permutation** of the full set:</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>$$(n)_n = n! = n(n-1)\cdots 2 \cdot 1.$$</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example — Five distinct digits</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>What is the probability that five digits drawn independently and uniformly from $<span class="sc">\{</span>0,\ldots,9<span class="sc">\}</span>$ are all different?</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>The total number of outcomes is $10^5$. The number of outcomes with all digits distinct is $(10)_5 = 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 = 30240$. Thus</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(\text{all distinct}) = \frac{30240}{100000} = 0.3024.$$</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### The Birthday Problem {#sec-birthday}</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>What is the probability that in a group of $n$ people, at least two share a birthday? Treating all 365 days as equally likely and ignoring leap years, the probability that **no two** share a birthday is</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>$$p_{\text{no match}} = \frac{(365)_n}{365^n} = \prod_{k=0}^{n-1}\left(1 - \frac{k}{365}\right).$$</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>For small $n$, dropping terms of order $(1/365)^2$:</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>$$p_{\text{no match}} \approx 1 - \frac{n(n-1)}{730},$$</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>so $\mathbb{P}(\text{at least one match}) \approx n(n-1)/730$. For larger $n$, taking logs and using $\log(1-x)\approx -x$:</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>$$p_{\text{no match}} \approx e^{-n(n-1)/730}.$$</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>The crossover point $p_{\text{match}} \geq 1/2$ occurs at $n = 23$.</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-birthday</span></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Probability of at least one shared birthday vs. group size."</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>n_vals <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">70</span>)</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>p_no_match <span class="op">=</span> np.array([np.prod([(<span class="dv">365</span><span class="op">-</span>k)<span class="op">/</span><span class="dv">365</span> <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)]) <span class="cf">for</span> n <span class="kw">in</span> n_vals])</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>p_match <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p_no_match</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">3.8</span>))</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>ax.plot(n_vals, p_match, color<span class="op">=</span><span class="st">'#2a6496'</span>, linewidth<span class="op">=</span><span class="fl">1.8</span>)</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'#888'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">'50%'</span>)</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">23</span>, color<span class="op">=</span><span class="st">'#c0392b'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">'$n=23$'</span>)</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Group size $n$'</span>)</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">$(at least one shared birthday)'</span>)</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>,<span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Combinations</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>::: {#thm-binomial}</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="fu">## Binomial Coefficient</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>The number of unordered subsets of size $r$ drawn from $n$ elements is</span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>$$\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.$$</span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>::: {.proof}</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>From $n$ elements we can form $(n)_r$ ordered samples of size $r$. Each unordered subset of size $r$ appears exactly $r!$ times among these (once for each ordering of its elements), so the number of unordered subsets is $(n)_r / r!$.</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip collapse="true"}</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example — $\binom{5}{3} = 10$</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>We want unordered groups of 3 from $<span class="sc">\{</span>1,2,3,4,5<span class="sc">\}</span>$. There are $5! = 120$ total orderings of all five elements. Each group of 3 appears in $3! = 6$ orderings among the first three positions, and the remaining $2! = 2$ orderings of the last two positions are irrelevant. So</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>$$\binom{5}{3} = \frac{5!}{3!\cdot 2!} = \frac{120}{12} = 10.$$</span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>::: {#thm-binomial-theorem}</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Binomial Theorem</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>For any real $x, y$ and non-negative integer $n$,</span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>$$(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}.$$</span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>Setting $x = y = 1$ gives $\sum_{k=0}^n \binom{n}{k} = 2^n$, the total number of subsets of an $n$-element set.</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="fu">## Problem Set</span></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### Core Problems (Feller)</span></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>**Problem 1.1.** Among the digits $1, 2, 3, 4, 5$ first one is chosen, and then a second from the remaining four. Assume all twenty outcomes equally likely. Find the probability that an odd digit is selected (a) first; (b) second; (c) both times.</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution collapse="true"}</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Solution</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>Write out the $5 \times 4 = 20$ ordered pairs. The odd digits are $<span class="sc">\{</span>1, 3, 5<span class="sc">\}</span>$.</span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>(a) Outcomes with an odd first digit: $3 \times 4 = 12$, so $\mathbb{P} = 12/20 = 3/5$.</span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>(b) By symmetry, each position is equally likely to take any value, so $\mathbb{P}(\text{second odd}) = 3/5$.</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>(c) Both odd: choose the first odd in 3 ways, the second in 2 ways, giving $3 \times 2 = 6$ outcomes. $\mathbb{P} = 6/20 = 3/10$.</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>**Problem 1.2.** A coin is tossed until the same result appears twice in succession. Assign probability $1/2^n$ to each outcome requiring $n$ tosses. (a) Describe the sample space. (b) Find $\mathbb{P}(\text{ends before toss 6})$. (c) Find $\mathbb{P}(\text{even number of tosses})$.</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution collapse="true"}</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a><span class="fu">## Solution</span></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>The sample space consists of strings of length $n \geq 2$ where the first $n-2$ characters alternate ($HTH\ldots$ or $THT\ldots$) and the last two are identical. For each $n$ there are exactly 2 outcomes, each with probability $1/2^n$.</span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>**(b)** Sum over $n \in <span class="sc">\{</span>2,3,4,5<span class="sc">\}</span>$:</span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>$$2<span class="sc">\!</span>\left(\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}\right) = \frac{30}{32} = \frac{15}{16}.$$</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>**(c)** Sum over even $n = 2, 4, 6, \ldots$:</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>$$2\sum_{k=1}^{\infty}\frac{1}{4^k} = 2 \cdot \frac{1/4}{1-1/4} = \frac{2}{3}.$$</span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>**Problem 1.3.** Two dice are thrown. Let $A$ = sum is odd, $B$ = at least one ace. Find $\mathbb{P}(AB)$, $\mathbb{P}(A \cup B)$, $\mathbb{P}(A\bar{B})$ assuming all 36 outcomes equally likely.</span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>::: {.callout-caution collapse="true"}</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a><span class="fu">## Solution</span></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>$\mathbb{P}(A) = 18/36 = 1/2$. For $B$: there are $6 + 6 - 1 = 11$ outcomes with at least one ace, so $\mathbb{P}(B) = 11/36$. The outcomes in $AB$ (odd sum and at least one ace) are $(1,2),(1,4),(1,6),(2,1),(4,1),(6,1)$, giving $\mathbb{P}(AB) = 6/36$.</span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a>$$\mathbb{P}(A \cup B) = \tfrac{18}{36} + \tfrac{11}{36} - \tfrac{6}{36} = \frac{23}{36}, \qquad \mathbb{P}(A\bar{B}) = \mathbb{P}(A) - \mathbb{P}(AB) = \frac{12}{36} = \frac{1}{3}.$$</span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quant Finance Problems</span></span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>**QF-1 — Gambler's Ruin.** A trader starts with \$3 and makes fair \$1 bets, stopping at \$0 or \$6.</span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>(a) Find her probability of ruin using $p_k = 1 - k/N$.</span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>(b) For unfair bets with win probability $p \neq 1/2$, the ruin probability from stake $k$ with target $N$ is $\bigl<span class="co">[</span><span class="ot">(q/p)^k - (q/p)^N\bigr</span><span class="co">]</span> / \bigl<span class="co">[</span><span class="ot">1 - (q/p)^N\bigr</span><span class="co">]</span>$ where $q = 1-p$. Compute for $p = 0.45$.</span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>(c) What does this say about trading without edge?</span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>**QF-2 — CRR Binomial Model.** Stock $S_0 = 100$, $u = 1.1$, $d = 0.9$, 3 periods, $r = 0$.</span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>(a) Enumerate all 8 paths.</span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a>(b) Find $\mathbb{P}(S_3 &gt; 105)$ under real-world $p = 0.6$.</span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a>(c) Find the risk-neutral probability $\tilde{p}$ satisfying $\tilde{p}\,u + (1-\tilde{p})\,d = 1$ and recompute.</span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a>**QF-3 — Bayesian Regime Detection.** Prior $\mathbb{P}(\text{trending}) = 0.4$. A momentum signal fires on 70% of trending days and 20% of mean-reverting days.</span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>(a) Posterior after one signal. (b) After two signals. (c) Prior needed for 50% posterior after one signal.</span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-bayes-update</span></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Posterior probability of trending regime after $k$ consecutive positive signals."</span></span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>p_T, p_s_T, p_s_M <span class="op">=</span> <span class="fl">0.4</span>, <span class="fl">0.70</span>, <span class="fl">0.20</span></span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a>posteriors, prior <span class="op">=</span> [], p_T</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>):</span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a>    posteriors.append(prior)</span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>    prior <span class="op">=</span> (prior <span class="op">*</span> p_s_T) <span class="op">/</span> (prior <span class="op">*</span> p_s_T <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> prior) <span class="op">*</span> p_s_M)</span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="fl">6.5</span>, <span class="fl">3.8</span>))</span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="bu">range</span>(<span class="dv">8</span>), posteriors, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'#2a6496'</span>, linewidth<span class="op">=</span><span class="fl">1.8</span>, markersize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'#888'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">'50%'</span>)</span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Consecutive positive signals $k$'</span>)</span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="ch">\\</span><span class="st">mathbb</span><span class="sc">{P}</span><span class="st">(</span><span class="ch">\\</span><span class="st">text</span><span class="sc">{Trending}</span><span class="st"> </span><span class="ch">\\</span><span class="st">mid k</span><span class="ch">\\</span><span class="st"> </span><span class="ch">\\</span><span class="st">text</span><span class="sc">{signals}</span><span class="st">)$'</span>)</span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a>ax.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.25</span>)</span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>,<span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -1,0 +1,158 @@
+/* ── Typography ─────────────────────────────────────────────── */
+body, .quarto-document {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #1a1a1a;
+}
+
+/* Slightly wider content column */
+.quarto-document .page-columns .column-body {
+  max-width: 720px;
+}
+
+/* ── Headings ───────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-weight: bold;
+}
+
+h1 { font-size: 1.6rem; margin-bottom: 0.3em; }
+h2 { font-size: 1.25rem; margin-top: 2em; border-bottom: 1px solid #ccc; padding-bottom: 0.2em; }
+h3 { font-size: 1.1rem; margin-top: 1.6em; }
+
+/* ── Theorem environments ───────────────────────────────────── */
+/* Quarto wraps theorems/defs/examples in divs with these classes */
+
+div.theorem,
+div.lemma,
+div.proposition,
+div.corollary {
+  margin: 1.6em 0;
+  padding: 0.1em 0 0.1em 1.1em;
+  border-left: 2.5px solid #555;
+}
+
+div.theorem p,
+div.lemma p,
+div.proposition p,
+div.corollary p {
+  font-style: italic;
+  margin: 0;
+}
+
+/* Title (e.g. "Theorem 1.1") stays upright */
+.theorem-title,
+.lemma-title,
+.proposition-title,
+.corollary-title {
+  font-style: normal !important;
+  font-weight: bold;
+}
+
+div.definition {
+  margin: 1.6em 0;
+  padding: 0.1em 0 0.1em 1.1em;
+  border-left: 2.5px solid #2a6496;
+}
+
+div.definition p {
+  font-style: normal;
+  margin: 0;
+}
+
+.definition-title {
+  font-weight: bold;
+}
+
+div.example {
+  margin: 1.6em 0;
+  padding: 0.1em 0 0.1em 1.1em;
+  border-left: 2.5px solid #aaa;
+}
+
+div.example p {
+  font-style: normal;
+  margin: 0;
+}
+
+.example-title {
+  font-weight: bold;
+  color: #555;
+}
+
+/* ── Proof ──────────────────────────────────────────────────── */
+div.proof {
+  margin: 1.2em 0 1.6em 0;
+}
+
+div.proof p {
+  margin: 0;
+}
+
+div.proof::after {
+  content: "□";
+  float: right;
+  font-size: 1rem;
+}
+
+/* ── Display math ───────────────────────────────────────────── */
+.math.display {
+  margin: 1.2em 2em;
+  overflow-x: auto;
+}
+
+/* ── Code callouts — keep as-is, just tighten spacing ────────── */
+.callout {
+  margin: 1.4em 0;
+}
+
+/* ── Tables ─────────────────────────────────────────────────── */
+table {
+  font-size: 0.95rem;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+}
+
+th, td {
+  padding: 0.4em 0.9em;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  border-bottom: 2px solid #555;
+  font-weight: bold;
+}
+
+/* ── TOC ────────────────────────────────────────────────────── */
+#toc-title {
+  font-family: inherit;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+}
+
+/* ── Dark mode overrides ────────────────────────────────────── */
+[data-bs-theme="dark"] body {
+  color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] div.theorem,
+[data-bs-theme="dark"] div.lemma,
+[data-bs-theme="dark"] div.proposition,
+[data-bs-theme="dark"] div.corollary {
+  border-left-color: #aaa;
+}
+
+[data-bs-theme="dark"] div.definition {
+  border-left-color: #5b9bd5;
+}
+
+[data-bs-theme="dark"] div.example {
+  border-left-color: #666;
+}
+
+[data-bs-theme="dark"] h2 {
+  border-bottom-color: #444;
+}
