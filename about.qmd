@@ -1,0 +1,13 @@
+---
+title: "About"
+toc: false
+---
+
+I'm Sebastian Lech. These pages collect my working notes on probability theory, mathematics, and quantitative finance.
+
+I'm currently reading Feller's *An Introduction to Probability Theory and Its Applications* and extending the problems with a quant finance lens — connecting the classical theory to derivatives pricing, portfolio risk, and stochastic processes.
+
+Previously I've written about linear algebra (SVD, eigendecomposition) and time series applied to financial data.
+
+**Contact:** [lech.sebastianp@gmail.com](mailto:lech.sebastianp@gmail.com)
+**GitHub:** [SebastianLech](https://github.com/SebastianLech)

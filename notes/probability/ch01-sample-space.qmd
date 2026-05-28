@@ -1,0 +1,282 @@
+---
+title: "Chapter 1: The Sample Space"
+subtitle: "Feller — Probability Theory and Its Applications"
+date: 2026-01-02
+toc: true
+toc-depth: 3
+number-sections: true
+bibliography: ../../references.bib
+---
+
+## Events and Sample Spaces
+
+Consider an experiment and its events, characterised by a **sample space** $\Omega$ and the points within it.
+
+::: {.callout-note appearance="simple"}
+## Definitions — Events
+
+Given two events $A$ and $B$:
+
+- $AB$ denotes the event "$A$ **and** $B$" (intersection)
+- $A \cup B$ denotes the event "$A$ **or** $B$" (union)
+- If $AB = \emptyset$ we say $A$ and $B$ are **mutually exclusive**
+- If every point in $A$ is in $B$, we write $A \subset B$ ("$A$ implies $B$")
+- $A - B$ denotes the event "$A$ occurs but not $B$"
+- $\bar{A}$ denotes the complement of $A$
+:::
+
+::: {.callout-note appearance="simple"}
+## Definition — Probability on a Discrete Space
+
+Given a discrete sample space $\Omega = \{E_1, E_2, \ldots\}$, a **probability** is an assignment of non-negative numbers $\mathbb{P}(E_j)$ to each sample point such that
+$$\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.$$
+The probability of an event $A$ is then $\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j)$.
+:::
+
+::: {.callout-tip collapse="true"}
+## Example — Two Coin Flips
+
+Flip a fair coin twice. The sample space is $\Omega = \{HH, HT, TH, TT\}$.
+
+Let $A$ = heads on the first toss, $B$ = tails on the second toss. Then:
+
+| Event | Elements | Probability |
+|-------|----------|-------------|
+| $A$ | $\{HH, HT\}$ | $1/2$ |
+| $B$ | $\{HT, TT\}$ | $1/2$ |
+| $AB$ | $\{HT\}$ | $1/4$ |
+| $A \cup B$ | $\{HH, HT, TT\}$ | $3/4$ |
+:::
+
+---
+
+## Combinatorial Analysis
+
+### Permutations
+
+Consider a population of $n$ distinct items and a sample of size $r$. The number of ordered samples is:
+
+- **with replacement:** $n^r$
+- **without replacement:** $(n)_r = n(n-1)\cdots(n-r+1)$
+
+When $r = n$ we get all orderings of the full set:
+$$(n)_n = n! = n(n-1)(n-2)\cdots 2 \cdot 1.$$
+
+::: {.callout-tip collapse="true"}
+## Example — Probability of Five Distinct Digits
+
+What is the probability that five randomly drawn digits (0–9, with replacement) are all different?
+
+$$\frac{(10)_5}{10^5} = \frac{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6}{100000} = \frac{30240}{100000} = 0.3024.$$
+:::
+
+### The Birthday Problem {#sec-birthday}
+
+What is the probability that at least two people in a group of $n$ share a birthday?
+
+The probability that **no two** share a birthday is
+$$p_{\text{no match}} = \frac{(365)_n}{365^n} = \left(1 - \frac{1}{365}\right)\left(1 - \frac{2}{365}\right)\cdots\left(1 - \frac{n-1}{365}\right).$$
+
+For small $n$, ignoring terms of order $(1/365)^2$ and higher:
+$$p_{\text{no match}} \approx 1 - \frac{1 + 2 + \cdots + (n-1)}{365} = 1 - \frac{n(n-1)}{730}.$$
+
+So
+$$\mathbb{P}(\text{at least one match}) \approx \frac{n(n-1)}{730} \quad \text{for small } n.$$
+
+For larger $n$ use the log approximation $\log(1-x) \approx -x$:
+$$\log p_{\text{no match}} \approx -\frac{1 + 2 + \cdots + (n-1)}{365} = -\frac{n(n-1)}{730}$$
+giving $p_{\text{no match}} \approx e^{-n(n-1)/730}$.
+
+```{python}
+#| label: fig-birthday
+#| fig-cap: "Probability of at least one shared birthday vs. group size"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+n_vals = np.arange(1, 70)
+
+# Exact computation
+p_no_match = np.ones(len(n_vals))
+for i, n in enumerate(n_vals):
+    p = 1.0
+    for k in range(n):
+        p *= (365 - k) / 365
+    p_no_match[i] = p
+
+p_match = 1 - p_no_match
+
+fig, ax = plt.subplots(figsize=(7, 4))
+ax.plot(n_vals, p_match, color='steelblue', linewidth=2)
+ax.axhline(0.5, color='gray', linestyle='--', linewidth=0.8, label='50%')
+ax.axvline(23, color='coral', linestyle='--', linewidth=0.8, label='n = 23')
+ax.set_xlabel('Group size $n$')
+ax.set_ylabel('$\\mathbb{P}$(at least one shared birthday)')
+ax.set_title('Birthday Problem')
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+
+n50 = next(n for n, p in zip(n_vals, p_match) if p >= 0.5)
+print(f"Group size needed for >50% probability: {n50}")
+```
+
+### Combinations
+
+::: {.callout-note appearance="simple"}
+## Theorem — Binomial Coefficient
+
+The number of ways to choose a group of $r$ items from $n$ (order irrelevant) is
+$$\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.$$
+:::
+
+**Why?** Start with $(n)_r$ ordered selections. Each unordered group of size $r$ has been counted $r!$ times (once for each ordering), so divide by $r!$.
+
+::: {.callout-tip collapse="true"}
+## Example — Understanding $\binom{5}{3} = 10$
+
+We want groups of 3 from $\{1,2,3,4,5\}$.
+
+- Total ordered arrangements: $5! = 120$
+- Each group of 3 can be ordered $3! = 6$ ways (overcounting factor)
+- The leftover $5-3=2$ items can be arranged $2! = 2$ ways (also overcounting)
+
+$$\binom{5}{3} = \frac{5!}{3!\cdot 2!} = \frac{120}{6 \cdot 2} = 10.$$
+:::
+
+---
+
+## Problem Set
+
+### Core Problems (Feller)
+
+**Problem 1.1.** Among the digits $1, 2, 3, 4, 5$ first one is chosen, and then a second selection is made among the remaining four. Assume all twenty outcomes are equally likely. Find the probability that an odd digit is selected (a) the first time; (b) the second time; (c) both times.
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+Write out the sample space:
+
+$$\begin{array}{ccccc}
+(1,2) & (2,1) & (3,1) & (4,1) & (5,1) \\
+(1,3) & (2,3) & (3,2) & (4,2) & (5,2) \\
+(1,4) & (2,4) & (3,4) & (4,3) & (5,3) \\
+(1,5) & (2,5) & (3,5) & (4,5) & (5,4)
+\end{array}$$
+
+The odd digits are $\{1, 3, 5\}$.
+
+(a) Outcomes with odd first digit: rows with first element in $\{1,3,5\}$ — that's $3 \times 4 = 12$ outcomes. $\mathbb{P} = 12/20 = 3/5$.
+
+(b) By symmetry, $\mathbb{P}(\text{second odd}) = 3/5$ as well. (Each position is equally likely to take each value.)
+
+(c) Both odd: pairs $(o_1, o_2)$ with $o_1 \neq o_2$, both in $\{1,3,5\}$. Count: $3 \times 2 = 6$. $\mathbb{P} = 6/20 = 3/10$.
+:::
+
+**Problem 1.2.** A coin is tossed until for the first time the same result appears twice in succession. Assign probability $1/2^n$ to each outcome requiring $n$ tosses. (a) Describe the sample space. (b) Find $\mathbb{P}(\text{ends before toss 6})$. (c) Find $\mathbb{P}(\text{even number of tosses})$.
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+The sample space consists of strings of length $n \geq 2$ where the first $n-2$ characters alternate ($HT\ldots$ or $TH\ldots$) and the last two are identical:
+
+$$\begin{array}{rll}
+n=2: & HH, & TT \\
+n=3: & THH, & HTT \\
+n=4: & HTHH, & THTT \\
+& \vdots
+\end{array}$$
+
+Each length $n$ contributes 2 outcomes each with probability $1/2^n$.
+
+**(b)** End before toss 6 means $n \in \{2,3,4,5\}$:
+$$2\left(\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}\right) = 2 \cdot \frac{8+4+2+1}{32} = \frac{30}{32} = \frac{15}{16}.$$
+
+**(c)** Even $n$ means $n = 2, 4, 6, \ldots$:
+$$\sum_{k=1}^{\infty} \frac{2}{2^{2k}} = 2\sum_{k=1}^{\infty}\frac{1}{4^k} = 2 \cdot \frac{1/4}{1-1/4} = \frac{2}{3}.$$
+:::
+
+**Problem 1.3.** Two dice are thrown. Let $A$ = sum is odd, $B$ = at least one ace. Find $\mathbb{P}(AB)$, $\mathbb{P}(A \cup B)$, $\mathbb{P}(A\bar{B})$.
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+With 36 equally likely outcomes:
+- $\mathbb{P}(A) = 18/36 = 1/2$ (odd sum)
+- $\mathbb{P}(B) = 11/36$ (at least one ace: $6+6-1=11$ outcomes)
+- $\mathbb{P}(AB) = 6/36 = 1/6$ (odd sum *and* at least one ace — enumerate: $(1,2),(1,4),(1,6),(2,1),(4,1),(6,1)$)
+
+Then:
+$$\mathbb{P}(A \cup B) = \frac{18}{36} + \frac{11}{36} - \frac{6}{36} = \frac{23}{36}$$
+$$\mathbb{P}(A\bar{B}) = \mathbb{P}(A) - \mathbb{P}(AB) = \frac{18}{36} - \frac{6}{36} = \frac{1}{3}.$$
+:::
+
+---
+
+### Quant Finance Problems
+
+::: {.callout-important appearance="minimal"}
+**Problem QF-1 — Gambler's Ruin.** A trader has \$3 and plays fair \$1 bets, stopping at \$0 or \$6.
+
+(a) Find her probability of ruin using the formula $p_k = 1 - k/N$.
+(b) If bets are unfair with win probability $p \neq 1/2$, the ruin probability is $\displaystyle\frac{(q/p)^k - (q/p)^N}{1 - (q/p)^N}$ where $q = 1-p$. Compute this for $p = 0.45$, $k = 3$, $N = 6$.
+(c) What does this tell you about edge (positive expected value) in trading?
+:::
+
+::: {.callout-important appearance="minimal"}
+**Problem QF-2 — CRR Binomial Model.** Stock $S_0 = 100$ moves up by $u=1.1$ or down by $d=0.9$ each day for 3 days.
+
+(a) Describe $\Omega$ and its 8 paths.
+(b) List paths with $S_3 > 105$ (i.e., at least two up-moves).
+(c) Compute $\mathbb{P}(S_3 > 105)$ with real-world $p = 0.6$.
+(d) Find the risk-neutral probability $\tilde{p}$ satisfying $\tilde{p}\cdot u + (1-\tilde{p})\cdot d = 1$ (zero interest rate). Recompute (c) under $\tilde{p}$.
+
+*This is the Cox-Ross-Rubinstein model — the simplest framework for pricing options.*
+:::
+
+::: {.callout-important appearance="minimal"}
+**Problem QF-3 — Bayes and Regime Detection.** A market is in trending state $T$ with prior $\mathbb{P}(T) = 0.4$. A momentum signal fires on 70% of trending days and 20% of mean-reverting days.
+
+(a) Compute the posterior $\mathbb{P}(T \mid \text{signal})$.
+(b) After two independent signals, what is $\mathbb{P}(T \mid \text{two signals})$?
+(c) At what prior does a single signal leave you at 50% posterior?
+:::
+
+```{python}
+#| label: fig-bayes-update
+#| fig-cap: "Bayesian posterior after observing k consecutive positive signals"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+p_T = 0.4          # prior P(T)
+p_signal_T = 0.70  # P(signal | T)
+p_signal_M = 0.20  # P(signal | M)
+
+k_vals = np.arange(0, 8)
+posteriors = []
+
+prior = p_T
+for k in k_vals:
+    posteriors.append(prior)
+    # Bayes update
+    likelihood_T = p_signal_T
+    likelihood_M = p_signal_M
+    posterior = (prior * likelihood_T) / (prior * likelihood_T + (1 - prior) * likelihood_M)
+    prior = posterior
+
+fig, ax = plt.subplots(figsize=(7, 4))
+ax.plot(k_vals, posteriors, 'o-', color='steelblue', linewidth=2, markersize=6)
+ax.axhline(0.5, color='gray', linestyle='--', linewidth=0.8, label='50% threshold')
+ax.set_xlabel('Number of consecutive positive signals')
+ax.set_ylabel('$\\mathbb{P}(\\text{Trending} \\mid \\text{signals})$')
+ax.set_title('Bayesian Regime Detection')
+ax.set_ylim(0, 1)
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```

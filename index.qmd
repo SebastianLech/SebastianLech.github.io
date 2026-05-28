@@ -1,0 +1,74 @@
+---
+title: "Sebastian Lech"
+subtitle: "Notes on probability, mathematics, and quantitative finance."
+page-layout: full
+toc: false
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-8}
+
+I'm working through probability theory and its applications, with a focus on the mathematical foundations that underpin quantitative finance. These pages are my working notes — problems, proofs, and Python explorations.
+
+**Currently working through:** Feller, *An Introduction to Probability Theory and Its Applications*, Vol. 1.
+
+:::
+
+::: {.g-col-12 .g-col-md-4}
+
+### Find me
+
+- [GitHub](https://github.com/SebastianLech)
+- [lech.sebastianp\@gmail.com](mailto:lech.sebastianp@gmail.com)
+
+:::
+
+:::
+
+---
+
+## Notes
+
+Working notes and problem sets, organised by topic.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}
+### [Probability Theory](notes/probability/index.qmd)
+Feller Vol. 1 — sample spaces, combinatorics, distributions, limit theorems. With quant finance problem sets.
+:::
+
+:::
+
+---
+
+## Articles
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}
+### [Eigenvalues & Eigenvectors](articles/eigen.qmd)
+Two quick applications.
+*July 2021*
+:::
+
+::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}
+### [Singular Value Decomposition](articles/svd.qmd)
+Applications and intuition.
+*July 2021*
+:::
+
+::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}
+### [Toronto Temperature — Time Series](articles/toronto-temp.qmd)
+Seasonal decomposition and forecasting.
+*June 2021*
+:::
+
+::: {.g-col-12 .g-col-md-6 .card style="padding: 1.2em; border: 1px solid #dee2e6; border-radius: 6px;"}
+### [Canadian Treasury Yield Curves](articles/treasury.qmd)
+Yield, forward, and par curves from Canadian government data.
+*June 2021*
+:::
+
+:::

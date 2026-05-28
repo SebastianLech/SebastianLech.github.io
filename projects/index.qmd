@@ -1,0 +1,8 @@
+---
+title: "Projects"
+toc: false
+---
+
+Python projects and notebooks. Add your `.ipynb` or `.qmd` files to this directory and they'll appear here.
+
+*Coming soon.*

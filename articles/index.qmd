@@ -1,0 +1,9 @@
+---
+title: "Articles"
+toc: false
+listing:
+  contents: "*.qmd"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description]
+---
