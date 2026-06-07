@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-01-02">
 
-<title>Chapter 1: The Sample Space – Sebastian Lech</title>
+<title>2&nbsp; Chapter 1: The Sample Space – Sebastian Lech</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -69,7 +69,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../assets/favicon.ico" rel="icon">
+<link href="../../working-problems/probability/ch01.html" rel="next">
+<link href="../../index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -81,15 +82,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-162c1c9927ce7d3acccb10d493ba080a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-8143a022bfdcdcbbc10ba19fd929714c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-162c1c9927ce7d3acccb10d493ba080a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0f8ae819db407832a2ba513ccdcb053f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-237cb308e580bc40f5283f14251f66ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0f8ae819db407832a2ba513ccdcb053f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -160,7 +161,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../assets/textbook.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -326,99 +327,135 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Sebastian Lech</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-notes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Notes</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-notes">    
-        <li>
-    <a class="dropdown-item" href="../../notes/probability/index.html">
- <span class="dropdown-text">Probability Theory</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-working-problems" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Working Problems</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-working-problems">    
-        <li>
-    <a class="dropdown-item" href="../../working-problems/probability/index.html">
- <span class="dropdown-text">Probability — Feller</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../../notebooks/index.html"> 
-<span class="menu-text">Notebooks</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/SebastianLech"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/probability/ch01-sample-space.html">Probability — Notes</a></li><li class="breadcrumb-item"><a href="../../notes/probability/ch01-sample-space.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 1: The Sample Space</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Sebastian Lech</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/SebastianLech/sebastianlech.github.io" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probability — Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notes/probability/ch01-sample-space.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 1: The Sample Space</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Probability — Problems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../working-problems/probability/ch01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1 — Problem Set</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notebooks</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebooks/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Notebooks</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">About</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#events-and-sample-spaces" id="toc-events-and-sample-spaces" class="nav-link active" data-scroll-target="#events-and-sample-spaces"><span class="header-section-number">1</span> Events and Sample Spaces</a></li>
-  <li><a href="#combinatorial-analysis" id="toc-combinatorial-analysis" class="nav-link" data-scroll-target="#combinatorial-analysis"><span class="header-section-number">2</span> Combinatorial Analysis</a>
+  <li><a href="#events-and-sample-spaces" id="toc-events-and-sample-spaces" class="nav-link active" data-scroll-target="#events-and-sample-spaces"><span class="header-section-number">2.1</span> Events and Sample Spaces</a></li>
+  <li><a href="#combinatorial-analysis" id="toc-combinatorial-analysis" class="nav-link" data-scroll-target="#combinatorial-analysis"><span class="header-section-number">2.2</span> Combinatorial Analysis</a>
   <ul class="collapse">
-  <li><a href="#permutations" id="toc-permutations" class="nav-link" data-scroll-target="#permutations"><span class="header-section-number">2.1</span> Permutations</a></li>
-  <li><a href="#sec-birthday" id="toc-sec-birthday" class="nav-link" data-scroll-target="#sec-birthday"><span class="header-section-number">2.2</span> The Birthday Problem</a></li>
-  <li><a href="#combinations" id="toc-combinations" class="nav-link" data-scroll-target="#combinations"><span class="header-section-number">2.3</span> Combinations</a></li>
+  <li><a href="#permutations" id="toc-permutations" class="nav-link" data-scroll-target="#permutations"><span class="header-section-number">2.2.1</span> Permutations</a></li>
+  <li><a href="#sec-birthday" id="toc-sec-birthday" class="nav-link" data-scroll-target="#sec-birthday"><span class="header-section-number">2.2.2</span> The Birthday Problem</a></li>
+  <li><a href="#combinations" id="toc-combinations" class="nav-link" data-scroll-target="#combinations"><span class="header-section-number">2.2.3</span> Combinations</a></li>
   </ul></li>
-  <li><a href="#problem-set" id="toc-problem-set" class="nav-link" data-scroll-target="#problem-set"><span class="header-section-number">3</span> Problem Set</a>
+  <li><a href="#problem-set" id="toc-problem-set" class="nav-link" data-scroll-target="#problem-set"><span class="header-section-number">2.3</span> Problem Set</a>
   <ul class="collapse">
-  <li><a href="#core-problems-feller" id="toc-core-problems-feller" class="nav-link" data-scroll-target="#core-problems-feller"><span class="header-section-number">3.1</span> Core Problems (Feller)</a></li>
-  <li><a href="#quant-finance-problems" id="toc-quant-finance-problems" class="nav-link" data-scroll-target="#quant-finance-problems"><span class="header-section-number">3.2</span> Quant Finance Problems</a></li>
+  <li><a href="#core-problems-feller" id="toc-core-problems-feller" class="nav-link" data-scroll-target="#core-problems-feller"><span class="header-section-number">2.3.1</span> Core Problems (Feller)</a></li>
+  <li><a href="#quant-finance-problems" id="toc-quant-finance-problems" class="nav-link" data-scroll-target="#quant-finance-problems"><span class="header-section-number">2.3.2</span> Quant Finance Problems</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/SebastianLech/sebastianlech.github.io/edit/main/notes/probability/ch01-sample-space.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SebastianLech/sebastianlech.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notes/probability/ch01-sample-space.html">Probability — Notes</a></li><li class="breadcrumb-item"><a href="../../notes/probability/ch01-sample-space.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 1: The Sample Space</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Chapter 1: The Sample Space</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chapter 1: The Sample Space</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 <p class="subtitle lead">Feller — Probability Theory and Its Applications</p>
 </div>
 
@@ -442,11 +479,11 @@ window.Quarto = {
 </header>
 
 
-<section id="events-and-sample-spaces" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="events-and-sample-spaces"><span class="header-section-number">1</span> Events and Sample Spaces</h2>
+<section id="events-and-sample-spaces" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="events-and-sample-spaces"><span class="header-section-number">2.1</span> Events and Sample Spaces</h2>
 <p>Consider an experiment whose possible outcomes form a <strong>sample space</strong> <span class="math inline">\Omega</span>. Each outcome is a point in <span class="math inline">\Omega</span>, and any subset of <span class="math inline">\Omega</span> is called an <strong>event</strong>.</p>
 <div id="def-events" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Events)</strong></span> Given events <span class="math inline">A</span> and <span class="math inline">B</span> in a sample space <span class="math inline">\Omega</span>:</p>
+<p><span class="theorem-title"><strong>Definition 2.1 (Events)</strong></span> Given events <span class="math inline">A</span> and <span class="math inline">B</span> in a sample space <span class="math inline">\Omega</span>:</p>
 <ul>
 <li><span class="math inline">AB = A \cap B</span> is the event that both <span class="math inline">A</span> and <span class="math inline">B</span> occur.</li>
 <li><span class="math inline">A \cup B</span> is the event that at least one of <span class="math inline">A</span>, <span class="math inline">B</span> occurs.</li>
@@ -457,7 +494,7 @@ window.Quarto = {
 </ul>
 </div>
 <div id="def-probability" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Probability on a Discrete Space)</strong></span> Given a discrete sample space <span class="math inline">\Omega = \{E_1, E_2, \ldots\}</span>, a <strong>probability measure</strong> is an assignment of non-negative numbers <span class="math inline">\mathbb{P}(E_j)</span> to each sample point satisfying <span class="math display">\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.</span> The probability of an event <span class="math inline">A \subset \Omega</span> is <span class="math display">\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j).</span></p>
+<p><span class="theorem-title"><strong>Definition 2.2 (Probability on a Discrete Space)</strong></span> Given a discrete sample space <span class="math inline">\Omega = \{E_1, E_2, \ldots\}</span>, a <strong>probability measure</strong> is an assignment of non-negative numbers <span class="math inline">\mathbb{P}(E_j)</span> to each sample point satisfying <span class="math display">\mathbb{P}(E_1) + \mathbb{P}(E_2) + \cdots = 1.</span> The probability of an event <span class="math inline">A \subset \Omega</span> is <span class="math display">\mathbb{P}(A) = \sum_{E_j \in A} \mathbb{P}(E_j).</span></p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -509,10 +546,10 @@ window.Quarto = {
 </div>
 <hr>
 </section>
-<section id="combinatorial-analysis" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="combinatorial-analysis"><span class="header-section-number">2</span> Combinatorial Analysis</h2>
-<section id="permutations" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="permutations"><span class="header-section-number">2.1</span> Permutations</h3>
+<section id="combinatorial-analysis" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="combinatorial-analysis"><span class="header-section-number">2.2</span> Combinatorial Analysis</h2>
+<section id="permutations" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="permutations"><span class="header-section-number">2.2.1</span> Permutations</h3>
 <p>Consider a population of <span class="math inline">n</span> distinct elements. An <strong>ordered sample</strong> of size <span class="math inline">r</span> drawn from the population can be selected in:</p>
 <ul>
 <li><span class="math inline">n^r</span> ways <strong>with replacement</strong>,</li>
@@ -537,8 +574,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="sec-birthday" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="sec-birthday"><span class="header-section-number">2.2</span> The Birthday Problem</h3>
+<section id="sec-birthday" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-birthday"><span class="header-section-number">2.2.2</span> The Birthday Problem</h3>
 <p>What is the probability that in a group of <span class="math inline">n</span> people, at least two share a birthday? Treating all 365 days as equally likely and ignoring leap years, the probability that <strong>no two</strong> share a birthday is</p>
 <p><span class="math display">p_{\text{no match}} = \frac{(365)_n}{365^n} = \prod_{k=0}^{n-1}\left(1 - \frac{k}{365}\right).</span></p>
 <p>For small <span class="math inline">n</span>, dropping terms of order <span class="math inline">(1/365)^2</span>: <span class="math display">p_{\text{no match}} \approx 1 - \frac{n(n-1)}{730},</span> so <span class="math inline">\mathbb{P}(\text{at least one match}) \approx n(n-1)/730</span>. For larger <span class="math inline">n</span>, taking logs and using <span class="math inline">\log(1-x)\approx -x</span>: <span class="math display">p_{\text{no match}} \approx e^{-n(n-1)/730}.</span> The crossover point <span class="math inline">p_{\text{match}} \geq 1/2</span> occurs at <span class="math inline">n = 23</span>.</p>
@@ -571,17 +608,17 @@ window.Quarto = {
 <img src="ch01-sample-space_files/figure-html/fig-birthday-output-1.png" width="612" height="353" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-birthday-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size.
+Figure&nbsp;2.1: Probability of at least one shared birthday vs.&nbsp;group size.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="combinations" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="combinations"><span class="header-section-number">2.3</span> Combinations</h3>
+<section id="combinations" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="combinations"><span class="header-section-number">2.2.3</span> Combinations</h3>
 <div id="thm-binomial" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1 (Binomial Coefficient)</strong></span> The number of unordered subsets of size <span class="math inline">r</span> drawn from <span class="math inline">n</span> elements is <span class="math display">\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.</span></p>
+<p><span class="theorem-title"><strong>Theorem 2.1 (Binomial Coefficient)</strong></span> The number of unordered subsets of size <span class="math inline">r</span> drawn from <span class="math inline">n</span> elements is <span class="math display">\binom{n}{r} = \frac{(n)_r}{r!} = \frac{n!}{r!\,(n-r)!}.</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>From <span class="math inline">n</span> elements we can form <span class="math inline">(n)_r</span> ordered samples of size <span class="math inline">r</span>. Each unordered subset of size <span class="math inline">r</span> appears exactly <span class="math inline">r!</span> times among these (once for each ordering of its elements), so the number of unordered subsets is <span class="math inline">(n)_r / r!</span>.</p>
@@ -603,16 +640,16 @@ Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size.
 </div>
 </div>
 <div id="thm-binomial-theorem" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 2 (Binomial Theorem)</strong></span> For any real <span class="math inline">x, y</span> and non-negative integer <span class="math inline">n</span>, <span class="math display">(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}.</span></p>
+<p><span class="theorem-title"><strong>Theorem 2.2 (Binomial Theorem)</strong></span> For any real <span class="math inline">x, y</span> and non-negative integer <span class="math inline">n</span>, <span class="math display">(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}.</span></p>
 </div>
 <p>Setting <span class="math inline">x = y = 1</span> gives <span class="math inline">\sum_{k=0}^n \binom{n}{k} = 2^n</span>, the total number of subsets of an <span class="math inline">n</span>-element set.</p>
 <hr>
 </section>
 </section>
-<section id="problem-set" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="problem-set"><span class="header-section-number">3</span> Problem Set</h2>
-<section id="core-problems-feller" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="core-problems-feller"><span class="header-section-number">3.1</span> Core Problems (Feller)</h3>
+<section id="problem-set" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="problem-set"><span class="header-section-number">2.3</span> Problem Set</h2>
+<section id="core-problems-feller" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="core-problems-feller"><span class="header-section-number">2.3.1</span> Core Problems (Feller)</h3>
 <p><strong>Problem 1.1.</strong> Among the digits <span class="math inline">1, 2, 3, 4, 5</span> first one is chosen, and then a second from the remaining four. Assume all twenty outcomes equally likely. Find the probability that an odd digit is selected (a) first; (b) second; (c) both times.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -674,8 +711,8 @@ Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size.
 </div>
 <hr>
 </section>
-<section id="quant-finance-problems" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="quant-finance-problems"><span class="header-section-number">3.2</span> Quant Finance Problems</h3>
+<section id="quant-finance-problems" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="quant-finance-problems"><span class="header-section-number">2.3.2</span> Quant Finance Problems</h3>
 <p><strong>QF-1 — Gambler’s Ruin.</strong> A trader starts with $3 and makes fair $1 bets, stopping at $0 or $6.</p>
 <ol type="a">
 <li>Find her probability of ruin using <span class="math inline">p_k = 1 - k/N</span>.</li>
@@ -724,7 +761,7 @@ Figure&nbsp;1: Probability of at least one shared birthday vs.&nbsp;group size.
 <img src="ch01-sample-space_files/figure-html/fig-bayes-update-output-1.png" width="613" height="353" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bayes-update-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Posterior probability of trending regime after <span class="math inline">k</span> consecutive positive signals.
+Figure&nbsp;2.2: Posterior probability of trending regime after <span class="math inline">k</span> consecutive positive signals.
 </figcaption>
 </figure>
 </div>
@@ -875,7 +912,7 @@ Figure&nbsp;2: Posterior probability of trending regime after <span class="math 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/SebastianLech\.github\.io\/sebastianlech\.github\.io\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1201,7 +1238,19 @@ Figure&nbsp;2: Posterior probability of trending regime after <span class="math 
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../working-problems/probability/ch01.html" class="pagination-link" aria-label="Chapter 1 — Problem Set">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1 — Problem Set</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 1: The Sample Space"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Feller — Probability Theory and Its Applications"</span></span>
@@ -1436,22 +1485,9 @@ Figure&nbsp;2: Posterior probability of trending regime after <span class="math 
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Sebastian Lech &nbsp;·&nbsp; <a href="https://github.com/SebastianLech">GitHub</a></p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SebastianLech/sebastianlech.github.io/edit/main/notes/probability/ch01-sample-space.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SebastianLech/sebastianlech.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
