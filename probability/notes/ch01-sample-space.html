@@ -2,21 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-01-02">
 
-<title>2&nbsp; Sample Space – Sebastian Lech</title>
+<title>Sample Space – Sebastian Lech</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -69,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../probability/problems/problems.html" rel="next">
+<link href="../../probability/notes/ch02-conditional-probability.html" rel="next">
 <link href="../../index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -77,14 +80,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5a1953863e1f72ef3b996ef827f01ca7.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0f8ae819db407832a2ba513ccdcb053f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-237cb308e580bc40f5283f14251f66ba.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-0f8ae819db407832a2ba513ccdcb053f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0445100ec58802c920b0eb7a988d2f2b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-292f08159e76bb684d2078e9a0a8b726.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-0445100ec58802c920b0eb7a988d2f2b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -382,6 +385,11 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../probability/notes/ch02-conditional-probability.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Conditional Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../probability/problems/problems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problems</span></a>
   </div>
 </li>
@@ -402,9 +410,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#events-and-sample-spaces" id="toc-events-and-sample-spaces" class="nav-link active" data-scroll-target="#events-and-sample-spaces"><span class="header-section-number">2.1</span> Events and Sample Spaces</a></li>
-  <li><a href="#combinatorial-analysis" id="toc-combinatorial-analysis" class="nav-link" data-scroll-target="#combinatorial-analysis"><span class="header-section-number">2.2</span> Combinatorial Analysis</a></li>
-  <li><a href="#problem-set" id="toc-problem-set" class="nav-link" data-scroll-target="#problem-set"><span class="header-section-number">2.3</span> Problem Set</a></li>
+  <li><a href="#events-and-sample-spaces" id="toc-events-and-sample-spaces" class="nav-link active" data-scroll-target="#events-and-sample-spaces">Events and Sample Spaces</a></li>
+  <li><a href="#combinatorial-analysis" id="toc-combinatorial-analysis" class="nav-link" data-scroll-target="#combinatorial-analysis">Combinatorial Analysis</a></li>
+  <li><a href="#problem-set" id="toc-problem-set" class="nav-link" data-scroll-target="#problem-set">Problem Set</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/SebastianLech/sebastianlech.github.io/edit/main/probability/notes/ch01-sample-space.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SebastianLech/sebastianlech.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -438,8 +446,8 @@ window.Quarto = {
 </header>
 
 
-<section id="events-and-sample-spaces" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="events-and-sample-spaces"><span class="header-section-number">2.1</span> Events and Sample Spaces</h2>
+<section id="events-and-sample-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="events-and-sample-spaces">Events and Sample Spaces</h2>
 <p>Consider an experiment and its events, characterised by a <strong>sample space</strong> <span class="math inline">\Omega</span> and the points within it.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -525,10 +533,10 @@ window.Quarto = {
 </div>
 <hr>
 </section>
-<section id="combinatorial-analysis" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="combinatorial-analysis"><span class="header-section-number">2.2</span> Combinatorial Analysis</h2>
-<section id="permutations" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="permutations"><span class="header-section-number">2.2.1</span> Permutations</h3>
+<section id="combinatorial-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="combinatorial-analysis">Combinatorial Analysis</h2>
+<section id="permutations" class="level3">
+<h3 class="anchored" data-anchor-id="permutations">Permutations</h3>
 <p>Consider a population of <span class="math inline">n</span> distinct items and a sample of size <span class="math inline">r</span>. The number of ordered samples is:</p>
 <ul>
 <li><strong>with replacement:</strong> <span class="math inline">n^r</span></li>
@@ -553,8 +561,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="sec-birthday" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-birthday"><span class="header-section-number">2.2.2</span> The Birthday Problem</h3>
+<section id="sec-birthday" class="level3">
+<h3 class="anchored" data-anchor-id="sec-birthday">The Birthday Problem</h3>
 <p>What is the probability that at least two people in a group of <span class="math inline">n</span> share a birthday?</p>
 <p>The probability that <strong>no two</strong> share a birthday is <span class="math display">p_{\text{no match}} = \frac{(365)_n}{365^n} = \left(1 - \frac{1}{365}\right)\left(1 - \frac{2}{365}\right)\cdots\left(1 - \frac{n-1}{365}\right).</span></p>
 <p>For small <span class="math inline">n</span>, ignoring terms of order <span class="math inline">(1/365)^2</span> and higher: <span class="math display">p_{\text{no match}} \approx 1 - \frac{1 + 2 + \cdots + (n-1)}{365} = 1 - \frac{n(n-1)}{730}.</span></p>
@@ -610,8 +618,8 @@ Figure&nbsp;2.1: Probability of at least one shared birthday vs.&nbsp;group size
 </div>
 </div>
 </section>
-<section id="combinations" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="combinations"><span class="header-section-number">2.2.3</span> Combinations</h3>
+<section id="combinations" class="level3">
+<h3 class="anchored" data-anchor-id="combinations">Combinations</h3>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -651,10 +659,10 @@ Figure&nbsp;2.1: Probability of at least one shared birthday vs.&nbsp;group size
 <hr>
 </section>
 </section>
-<section id="problem-set" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="problem-set"><span class="header-section-number">2.3</span> Problem Set</h2>
-<section id="core-problems-feller" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="core-problems-feller"><span class="header-section-number">2.3.1</span> Core Problems (Feller)</h3>
+<section id="problem-set" class="level2">
+<h2 class="anchored" data-anchor-id="problem-set">Problem Set</h2>
+<section id="core-problems-feller" class="level3">
+<h3 class="anchored" data-anchor-id="core-problems-feller">Core Problems (Feller)</h3>
 <p><strong>Problem 1.1.</strong> Among the digits <span class="math inline">1, 2, 3, 4, 5</span> first one is chosen, and then a second selection is made among the remaining four. Assume all twenty outcomes are equally likely. Find the probability that an odd digit is selected (a) the first time; (b) the second time; (c) both times.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -730,8 +738,8 @@ n=4: &amp; HTHH, &amp; THTT \\
 </div>
 <hr>
 </section>
-<section id="quant-finance-problems" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="quant-finance-problems"><span class="header-section-number">2.3.2</span> Quant Finance Problems</h3>
+<section id="quant-finance-problems" class="level3">
+<h3 class="anchored" data-anchor-id="quant-finance-problems">Quant Finance Problems</h3>
 <div class="callout callout-style-simple callout-important no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -939,16 +947,16 @@ Figure&nbsp;2.2: Bayesian posterior after observing k consecutive positive signa
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1305,8 +1313,8 @@ Figure&nbsp;2.2: Bayesian posterior after observing k consecutive positive signa
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../probability/problems/problems.html" class="pagination-link" aria-label="Problems">
-        <span class="nav-page-text"><span class="chapter-title">Problems</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../probability/notes/ch02-conditional-probability.html" class="pagination-link" aria-label="Conditional Probability">
+        <span class="nav-page-text"><span class="chapter-title">Conditional Probability</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1316,7 +1324,7 @@ Figure&nbsp;2.2: Bayesian posterior after observing k consecutive positive signa
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2026-01-02</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">toc-depth:</span><span class="co"> 2</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../references.bib</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
