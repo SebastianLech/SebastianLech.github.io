@@ -1,0 +1,10 @@
+---
+title: "Conditional Probability"
+date: 2026-01-02
+toc: true
+toc-depth: 2
+number-sections: false
+bibliography: ../../references.bib
+---
+
+# Conditional Probability

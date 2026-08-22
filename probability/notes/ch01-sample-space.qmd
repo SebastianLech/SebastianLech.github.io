@@ -1,10 +1,10 @@
 ---
-title: "Chapter 1: The Sample Space"
+title: "Sample Space"
 subtitle: "Feller — Probability Theory and Its Applications"
 date: 2026-01-02
 toc: true
-toc-depth: 3
-number-sections: true
+toc-depth: 2
+number-sections: false
 bibliography: ../../references.bib
 ---
 

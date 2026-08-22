@@ -1,51 +1,36 @@
 project:
-  type: website
+  type: book
   output-dir: _site
 
-website:
+book:
   title: "Sebastian Lech"
-  description: "Notes on probability, mathematics, and quantitative finance."
-  favicon: assets/favicon.ico
-
-  navbar:
-    left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Notes"
-        menu:
-          - text: "Probability Theory"
-            href: notes/probability/index.qmd
-      - text: "Articles"
-        href: articles/index.qmd
-      - text: "Projects"
-        href: projects/index.qmd
-      - text: "About"
-        href: about.qmd
-    right:
-      - icon: github
-        href: https://github.com/SebastianLech
-        aria-label: GitHub
-
-  page-footer:
-    center: |
-      Sebastian Lech &nbsp;·&nbsp;
-      [GitHub](https://github.com/SebastianLech)
-
+  author: "Sebastian Lech"
+  date: today
+  repo-url: https://github.com/SebastianLech/sebastianlech.github.io
+  repo-actions: [edit, issue]
   search: true
 
-  sidebar: false
+  chapters:
+    - index.qmd
+    - part: "Probability"
+      chapters:
+        - probability/notes/ch01-sample-space.qmd
+        - probability/notes/ch02-conditional-probability.qmd
+        - probability/problems/problems.qmd
+    - about.qmd
+
+bibliography: references.bib
 
 format:
   html:
     theme:
       light: flatly
       dark: darkly
-    mainfont: "Georgia, serif"
+    css: assets/textbook.css
     monofont: "Fira Code, monospace"
     highlight-style: github
     toc: true
     toc-depth: 3
-    toc-title: "Contents"
     number-sections: false
     smooth-scroll: true
     html-math-method: katex
@@ -53,10 +38,10 @@ format:
     code-tools: true
     fig-align: center
 
+jupyter: ghp-venv/bin/python3
+
 execute:
-  freeze: auto        # re-execute only when source changes
+  freeze: auto
   cache: true
   echo: true
   warning: false
-
-bibliography: references.bib
