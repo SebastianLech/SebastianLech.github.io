@@ -17,6 +17,7 @@ book:
         - probability/notes/ch01-sample-space.qmd
         - probability/notes/ch02-conditional-probability.qmd
         - probability/problems/problems.qmd
+    - scratch.qmd
     - about.qmd
 
 bibliography: references.bib

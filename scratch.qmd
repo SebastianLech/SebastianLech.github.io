@@ -1,0 +1,85 @@
+---
+title: "Scratch"
+subtitle: "Working notes and derivations"
+toc: true
+toc-depth: 3
+number-sections: false
+bibliography: references.bib
+---
+
+Informal working notes — derivations in progress, ideas being chased down, and formulas parked here for reference.
+
+---
+
+## Experiments That Stop Themselves
+
+Some experiments have no predetermined number of trials: you repeat until some condition holds for the first time. The number of trials is then itself random, and the outcomes are sequences of *variable length*. The organising idea is to **index outcomes by the trial $n$ at which the process stops**.
+
+::: {.callout-note appearance="simple"}
+## Framework — Sequential Sample Space with a Stopping Rule
+
+Let each trial produce a symbol from a finite alphabet $\Sigma$ (e.g. $\Sigma = \{H, T\}$). Work inside the set of all finite strings
+$$\Sigma^\ast = \bigcup_{k \ge 0} \Sigma^k.$$
+A **stopping rule** designates, for each string, whether the process halts. The sample space is the set of strings that halt at their last symbol and at no earlier point:
+$$\Omega = \big\{\, \omega = \omega_1\cdots\omega_n \in \Sigma^\ast \;:\; \text{rule first satisfied at position } n \,\big\}.$$
+Grade $\Omega$ by stopping time, $\displaystyle \Omega = \bigsqcup_{n} \Omega_n$ where $\Omega_n = \{\omega \in \Omega : |\omega| = n\}$.
+
+Since $\Omega$ is countable, take $\mathcal{F} = 2^{\Omega}$, assign each outcome a probability, and verify
+$$\sum_{n} \sum_{\omega \in \Omega_n} \mathbb{P}(\{\omega\}) = 1.$$
+Any event about the process ("stops by trial 5", "stops at an even trial") is a union of the $\Omega_n$, so its probability is a sum — often a geometric series.
+:::
+
+This is the same structure as any **waiting-time** problem (the geometric distribution: toss until the first head): don't model the unbounded process directly, model "it took exactly $n$ trials" and sum over $n$.
+
+### Worked Case — Toss Until the Same Result Twice in Succession
+
+The rule halts at trial $n$ when $\omega_{n-1} = \omega_n$, and this must be the *first* repeated adjacent pair — so $\omega_1\cdots\omega_{n-1}$ strictly alternates.
+
+::: {.callout-note appearance="simple"}
+## Sample Space — Three Equivalent Forms
+
+**Direct (set-builder).**
+$$
+\Omega = \Big\{\, \omega \in \{H,T\}^{n} \;:\; n \ge 2,\;\; \omega_i \neq \omega_{i+1}\ \text{for } 1 \le i \le n-2,\;\; \omega_{n-1} = \omega_n \,\Big\}.
+$$
+The alternation condition encodes "not stopped yet"; the last equality is the stop.
+
+**Graded by stopping time.**
+$$
+\Omega = \bigsqcup_{n \ge 2} \Omega_n, \qquad |\Omega_n| = 2,
+$$
+because once $\omega_1 \in \{H,T\}$ is chosen the whole string is forced (alternate for $n-1$ steps, then repeat).
+
+**Parametric.** The map $\omega \mapsto (\omega_1,\, |\omega|)$ is a bijection
+$$
+\Omega \;\longleftrightarrow\; \{H,T\} \times \{2, 3, 4, \dots\}.
+$$
+:::
+
+::: {.callout-note appearance="simple"}
+## Probability Space
+
+$\Omega$ is countable, so $\mathcal{F} = 2^{\Omega}$ and $\mathbb{P}$ is fixed by its values on singletons,
+$$\mathbb{P}(\{\omega\}) = 2^{-|\omega|},$$
+extended by countable additivity. This is a probability measure:
+$$\sum_{n \ge 2} |\Omega_n|\, 2^{-n} = \sum_{n \ge 2} 2 \cdot 2^{-n} = 1.$$
+:::
+
+::: {.callout-tip collapse="true"}
+## Underlying model — stopping time on infinite sequences
+
+Start from $\tilde{\Omega} = \{H,T\}^{\mathbb{N}}$ with fair-coin product measure and define the stopping time
+$$N(\omega) = \min\{\, k \ge 2 \;:\; \omega_k = \omega_{k-1} \,\}.$$
+The finite-string $\Omega$ above is the distribution of the truncated sequence $(\omega_1, \dots, \omega_N)$, and $\{N = n\}$ corresponds to $\Omega_n$.
+:::
+
+### First few strata
+
+$$\begin{array}{rll}
+n = 2: & HH, & TT \\
+n = 3: & THH, & HTT \\
+n = 4: & HTHH, & THTT \\
+& \vdots &
+\end{array}$$
+
+Each stratum $\Omega_n$ has two elements, each of probability $2^{-n}$, so $\mathbb{P}(\Omega_n) = 2^{1-n}$.
