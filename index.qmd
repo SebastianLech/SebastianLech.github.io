@@ -1,43 +1,11 @@
 ---
-title: "Page Title"
-subtitle: "A subtitle goes here"
+title: "Contents"
 author: "Sebastian Lech"
-date: today
 ---
 
-# Introduction
-
-This page uses a Tufte-style layout: a narrow main column for body text and a wide right margin for sidenotes, citations, and small figures.^[Footnotes render as sidenotes in the margin, right next to the text that references them.] Replace this text with your own.
-
-Citations also appear in the margin [@tufte2001].
-
-::: {.column-margin}
-This is a margin note. Use a `.column-margin` div for any content — text, images, tables — that should sit beside the main column without a footnote number.
-:::
-
-# Sections
-
-## Headings
-
-Use first- and second-level headings to structure the page. They are listed in the table of contents on the left.
-
-## Full-width content
-
-Content can break out of the main column into the margin when it needs more room.
-
-::: {.column-page-right}
-This block spans the main column and the margin. Use it for wide figures, tables, or code.
-:::
-
-## Math
-
-Inline math like $e^{i\pi} + 1 = 0$ and display math both work:
-
-$$
-\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
-$$
-
-# References
-
-::: {#refs}
-:::
+1. [Sample Space](sample-space/index.qmd)
+    1. [Events](sample-space/events.qmd)
+    2. [Probability Axioms](sample-space/probability-axioms.qmd)
+2. [Conditional Expectation](conditional-expectation/index.qmd)
+    1. [Conditioning on an Event](conditional-expectation/conditioning-on-an-event.qmd)
+    2. [Law of Total Expectation](conditional-expectation/law-of-total-expectation.qmd)

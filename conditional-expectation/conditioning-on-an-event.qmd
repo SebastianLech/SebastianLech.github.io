@@ -1,0 +1,35 @@
+---
+title: "Conditioning on an Event"
+subtitle: "Conditional Expectation"
+---
+
+# Introduction
+
+This is placeholder text for Conditioning on an Event. Replace it with your own.^[Footnotes render as sidenotes in the margin, right next to the text that references them.]
+
+Citations also appear in the margin [@tufte2001].
+
+::: {.column-margin}
+This is a margin note. Use a `.column-margin` div for any content that should sit beside the main column without a footnote number.
+:::
+
+# Details
+
+## Full-width content
+
+::: {.column-page-right}
+This block spans the main column and the margin. Use it for wide figures, tables, or code.
+:::
+
+## Math
+
+Inline math like $e^{i\pi} + 1 = 0$ and display math both work:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+$$
+
+# References
+
+::: {#refs}
+:::
