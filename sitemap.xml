@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://SebastianLech.github.io/analysis/limits.html</loc>
+    <lastmod>2026-11-07T17:05:18.149Z</lastmod>
+  </url>
+  <url>
     <loc>https://SebastianLech.github.io/index.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
+    <lastmod>2026-11-07T17:05:18.149Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/sample-space/events.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
+    <loc>https://SebastianLech.github.io/probability/events.html</loc>
+    <lastmod>2026-11-07T17:05:18.149Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/conditional-expectation/conditioning-on-an-event.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
+    <loc>https://SebastianLech.github.io/probability/probability-axioms.html</loc>
+    <lastmod>2026-11-07T17:05:18.149Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/conditional-expectation/index.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
+    <loc>https://SebastianLech.github.io/probability/index.html</loc>
+    <lastmod>2026-11-07T17:05:18.149Z</lastmod>
   </url>
   <url>
-    <loc>https://SebastianLech.github.io/conditional-expectation/law-of-total-expectation.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sample-space/probability-axioms.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SebastianLech.github.io/sample-space/index.html</loc>
-    <lastmod>2026-11-07T04:26:15.275Z</lastmod>
+    <loc>https://SebastianLech.github.io/analysis/index.html</loc>
+    <lastmod>2026-11-07T17:05:18.149Z</lastmod>
   </url>
 </urlset>

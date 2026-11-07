@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "analysis/limits.html",
+    "href": "analysis/limits.html",
+    "title": "Conditioning on an Event",
+    "section": "",
+    "text": "This is placeholder text for Conditioning on an Event. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
+  },
+  {
+    "objectID": "analysis/limits.html#full-width-content",
+    "href": "analysis/limits.html#full-width-content",
+    "title": "Conditioning on an Event",
+    "section": "Full-width content",
+    "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
+  },
+  {
+    "objectID": "analysis/limits.html#math",
+    "href": "analysis/limits.html#math",
+    "title": "Conditioning on an Event",
+    "section": "Math",
+    "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Contents",
@@ -7,128 +28,86 @@
     "text": "Sample Space\n\nEvents\nProbability Axioms\n\nConditional Expectation\n\nConditioning on an Event\nLaw of Total Expectation"
   },
   {
-    "objectID": "sample-space/events.html",
-    "href": "sample-space/events.html",
+    "objectID": "probability/events.html",
+    "href": "probability/events.html",
     "title": "Events",
     "section": "",
     "text": "This is placeholder text for Events. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
   },
   {
-    "objectID": "sample-space/events.html#full-width-content",
-    "href": "sample-space/events.html#full-width-content",
+    "objectID": "probability/events.html#full-width-content",
+    "href": "probability/events.html#full-width-content",
     "title": "Events",
     "section": "Full-width content",
     "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
   },
   {
-    "objectID": "sample-space/events.html#math",
-    "href": "sample-space/events.html#math",
+    "objectID": "probability/events.html#math",
+    "href": "probability/events.html#math",
     "title": "Events",
     "section": "Math",
     "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
   },
   {
-    "objectID": "conditional-expectation/conditioning-on-an-event.html",
-    "href": "conditional-expectation/conditioning-on-an-event.html",
-    "title": "Conditioning on an Event",
-    "section": "",
-    "text": "This is placeholder text for Conditioning on an Event. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
-  },
-  {
-    "objectID": "conditional-expectation/conditioning-on-an-event.html#full-width-content",
-    "href": "conditional-expectation/conditioning-on-an-event.html#full-width-content",
-    "title": "Conditioning on an Event",
-    "section": "Full-width content",
-    "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
-  },
-  {
-    "objectID": "conditional-expectation/conditioning-on-an-event.html#math",
-    "href": "conditional-expectation/conditioning-on-an-event.html#math",
-    "title": "Conditioning on an Event",
-    "section": "Math",
-    "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
-  },
-  {
-    "objectID": "conditional-expectation/index.html",
-    "href": "conditional-expectation/index.html",
-    "title": "Conditional Expectation",
-    "section": "",
-    "text": "This is placeholder text for Conditional Expectation. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
-  },
-  {
-    "objectID": "conditional-expectation/index.html#full-width-content",
-    "href": "conditional-expectation/index.html#full-width-content",
-    "title": "Conditional Expectation",
-    "section": "Full-width content",
-    "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
-  },
-  {
-    "objectID": "conditional-expectation/index.html#math",
-    "href": "conditional-expectation/index.html#math",
-    "title": "Conditional Expectation",
-    "section": "Math",
-    "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
-  },
-  {
-    "objectID": "conditional-expectation/law-of-total-expectation.html",
-    "href": "conditional-expectation/law-of-total-expectation.html",
-    "title": "Law of Total Expectation",
-    "section": "",
-    "text": "This is placeholder text for Law of Total Expectation. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
-  },
-  {
-    "objectID": "conditional-expectation/law-of-total-expectation.html#full-width-content",
-    "href": "conditional-expectation/law-of-total-expectation.html#full-width-content",
-    "title": "Law of Total Expectation",
-    "section": "Full-width content",
-    "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
-  },
-  {
-    "objectID": "conditional-expectation/law-of-total-expectation.html#math",
-    "href": "conditional-expectation/law-of-total-expectation.html#math",
-    "title": "Law of Total Expectation",
-    "section": "Math",
-    "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
-  },
-  {
-    "objectID": "sample-space/probability-axioms.html",
-    "href": "sample-space/probability-axioms.html",
+    "objectID": "probability/probability-axioms.html",
+    "href": "probability/probability-axioms.html",
     "title": "Probability Axioms",
     "section": "",
     "text": "This is placeholder text for Probability Axioms. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
   },
   {
-    "objectID": "sample-space/probability-axioms.html#full-width-content",
-    "href": "sample-space/probability-axioms.html#full-width-content",
+    "objectID": "probability/probability-axioms.html#full-width-content",
+    "href": "probability/probability-axioms.html#full-width-content",
     "title": "Probability Axioms",
     "section": "Full-width content",
     "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
   },
   {
-    "objectID": "sample-space/probability-axioms.html#math",
-    "href": "sample-space/probability-axioms.html#math",
+    "objectID": "probability/probability-axioms.html#math",
+    "href": "probability/probability-axioms.html#math",
     "title": "Probability Axioms",
     "section": "Math",
     "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
   },
   {
-    "objectID": "sample-space/index.html",
-    "href": "sample-space/index.html",
+    "objectID": "probability/index.html",
+    "href": "probability/index.html",
     "title": "Sample Space",
     "section": "",
     "text": "This is placeholder text for Sample Space. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
   },
   {
-    "objectID": "sample-space/index.html#full-width-content",
-    "href": "sample-space/index.html#full-width-content",
+    "objectID": "probability/index.html#full-width-content",
+    "href": "probability/index.html#full-width-content",
     "title": "Sample Space",
     "section": "Full-width content",
     "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
   },
   {
-    "objectID": "sample-space/index.html#math",
-    "href": "sample-space/index.html#math",
+    "objectID": "probability/index.html#math",
+    "href": "probability/index.html#math",
     "title": "Sample Space",
+    "section": "Math",
+    "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
+  },
+  {
+    "objectID": "analysis/index.html",
+    "href": "analysis/index.html",
+    "title": "Conditional Expectation",
+    "section": "",
+    "text": "This is placeholder text for Conditional Expectation. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
+  },
+  {
+    "objectID": "analysis/index.html#full-width-content",
+    "href": "analysis/index.html#full-width-content",
+    "title": "Conditional Expectation",
+    "section": "Full-width content",
+    "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
+  },
+  {
+    "objectID": "analysis/index.html#math",
+    "href": "analysis/index.html#math",
+    "title": "Conditional Expectation",
     "section": "Math",
     "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
   }
