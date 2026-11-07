@@ -32,7 +32,7 @@
     "href": "probability/events.html",
     "title": "Events",
     "section": "",
-    "text": "This is placeholder text for Events. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
+    "text": "This is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
   },
   {
     "objectID": "probability/events.html#full-width-content",
