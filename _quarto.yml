@@ -1,48 +1,15 @@
 project:
-  type: book
+  type: website
   output-dir: _site
 
-book:
+website:
   title: "Sebastian Lech"
-  author: "Sebastian Lech"
-  date: today
-  repo-url: https://github.com/SebastianLech/sebastianlech.github.io
-  repo-actions: [edit, issue]
-  search: true
-
-  chapters:
-    - index.qmd
-    - part: "Probability"
-      chapters:
-        - probability/notes/ch01-sample-space.qmd
-        - probability/notes/ch02-conditional-probability.qmd
-        - probability/problems/problems.qmd
-    - scratch.qmd
-    - about.qmd
-
-bibliography: references.bib
 
 format:
   html:
-    theme:
-      light: flatly
-      dark: darkly
-    css: assets/textbook.css
-    monofont: "Fira Code, monospace"
-    highlight-style: github
-    toc: true
-    toc-depth: 3
-    number-sections: false
-    smooth-scroll: true
-    html-math-method: katex
-    code-fold: true
-    code-tools: true
-    fig-align: center
+    grid:
+      margin-width: 350px
 
-jupyter: ghp-venv/bin/python3
-
-execute:
-  freeze: auto
-  cache: true
-  echo: true
-  warning: false
+reference-location: margin
+citation-location: margin
+bibliography: references.bib
