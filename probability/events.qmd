@@ -3,11 +3,11 @@ title: "Events"
 subtitle: "Sample Space"
 ---
 
-# Introduction
+# Definitions
 
-This is placeholder text for Events. Replace it with your own.^[Footnotes render as sidenotes in the margin, right next to the text that references them.]
-
-Citations also appear in the margin [@tufte2001].
+\begin{enumerate}
+    \item A sample space $S$ is the set of all possible outcomes of an expirement
+\end{enumerate}
 
 ::: {.column-margin}
 This is a margin note. Use a `.column-margin` div for any content that should sit beside the main column without a footnote number.
