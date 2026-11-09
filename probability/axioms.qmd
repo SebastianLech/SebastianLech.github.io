@@ -1,5 +1,5 @@
 ---
-title: "Sample Space"
+title: "Axioms"
 subtitle: "Outcomes, events, and the space they live in"
 ---
 

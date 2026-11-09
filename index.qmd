@@ -3,9 +3,6 @@ title: "Contents"
 author: "Sebastian Lech"
 ---
 
-1. [Sample Space](sample-space/index.qmd)
-    1. [Events](sample-space/events.qmd)
-    2. [Probability Axioms](sample-space/probability-axioms.qmd)
-2. [Conditional Expectation](conditional-expectation/index.qmd)
-    1. [Conditioning on an Event](conditional-expectation/conditioning-on-an-event.qmd)
-    2. [Law of Total Expectation](conditional-expectation/law-of-total-expectation.qmd)
+1. [Probability](probability/index.qmd)
+    1. [Axioms](probability/axioms.qmd)
+    2. [Conditional Probability](probability/conditional-probability.qmd)

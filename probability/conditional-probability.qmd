@@ -1,6 +1,6 @@
 ---
 title: "Probability Axioms"
-subtitle: "Sample Space"
+subtitle: "Probability"
 ---
 
 # Introduction
