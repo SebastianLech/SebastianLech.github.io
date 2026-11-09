@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "Contents",
     "section": "",
-    "text": "Sample Space\n\nEvents\nProbability Axioms\n\nConditional Expectation\n\nConditioning on an Event\nLaw of Total Expectation"
+    "text": "Probability\n\nAxioms\nConditional Probability"
   },
   {
     "objectID": "probability/events.html",
@@ -49,44 +49,44 @@
     "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
   },
   {
-    "objectID": "probability/probability-axioms.html",
-    "href": "probability/probability-axioms.html",
+    "objectID": "probability/conditional-probability.html",
+    "href": "probability/conditional-probability.html",
     "title": "Probability Axioms",
     "section": "",
     "text": "This is placeholder text for Probability Axioms. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
   },
   {
-    "objectID": "probability/probability-axioms.html#full-width-content",
-    "href": "probability/probability-axioms.html#full-width-content",
+    "objectID": "probability/conditional-probability.html#full-width-content",
+    "href": "probability/conditional-probability.html#full-width-content",
     "title": "Probability Axioms",
     "section": "Full-width content",
     "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
   },
   {
-    "objectID": "probability/probability-axioms.html#math",
-    "href": "probability/probability-axioms.html#math",
+    "objectID": "probability/conditional-probability.html#math",
+    "href": "probability/conditional-probability.html#math",
     "title": "Probability Axioms",
     "section": "Math",
     "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
   },
   {
-    "objectID": "probability/index.html",
-    "href": "probability/index.html",
-    "title": "Sample Space",
+    "objectID": "probability/axioms.html",
+    "href": "probability/axioms.html",
+    "title": "Axioms",
     "section": "",
     "text": "This is placeholder text for Sample Space. Replace it with your own.1\n1 Footnotes render as sidenotes in the margin, right next to the text that references them.\nTufte, Edward R. 2001. The Visual Display of Quantitative Information. 2nd ed. Graphics Press.\nCitations also appear in the margin (Tufte 2001).\n\n\nThis is a margin note. Use a .column-margin div for any content that should sit beside the main column without a footnote number."
   },
   {
-    "objectID": "probability/index.html#full-width-content",
-    "href": "probability/index.html#full-width-content",
-    "title": "Sample Space",
+    "objectID": "probability/axioms.html#full-width-content",
+    "href": "probability/axioms.html#full-width-content",
+    "title": "Axioms",
     "section": "Full-width content",
     "text": "Full-width content\n\nThis block spans the main column and the margin. Use it for wide figures, tables, or code."
   },
   {
-    "objectID": "probability/index.html#math",
-    "href": "probability/index.html#math",
-    "title": "Sample Space",
+    "objectID": "probability/axioms.html#math",
+    "href": "probability/axioms.html#math",
+    "title": "Axioms",
     "section": "Math",
     "text": "Math\nInline math like \\(e^{i\\pi} + 1 = 0\\) and display math both work:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}\n\\]"
   },
